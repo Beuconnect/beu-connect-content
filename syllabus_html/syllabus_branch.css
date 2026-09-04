@@ -1,0 +1,185 @@
+/*
+   BEU Connect Branch Premium UI/UX
+   Replicated from Android App Design
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --bg-start: #081423;
+    --bg-mid: #0D1B2A;
+    --bg-end: #050B18;
+    --card-bg: #13263D;
+    --card-border: rgba(24, 216, 255, 0.2);
+    --accent-cyan: #18D8FF;
+    --text-primary: #FFFFFF;
+    --radius-main: 16px;
+    --radius-premium: 28px;
+    --shadow-premium: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%) fixed;
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: linear-gradient(rgba(0, 229, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(5, 11, 24, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(24, 216, 255, 0.1);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+}
+
+.brand-name {
+    font-weight: 800;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.menu-btn {
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.menu-btn span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-cyan);
+}
+
+.info-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-main);
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-premium);
+}
+
+.welcome-card {
+    text-align: center;
+    background: linear-gradient(135deg, #13263D 0%, #0D1B2A 100%);
+    border-radius: var(--radius-premium);
+    padding: 32px 16px;
+}
+
+.welcome-card h1 {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+}
+
+.welcome-card p {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.semester-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.semester-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.semester-item:hover {
+    background: rgba(24, 216, 255, 0.08);
+    border-color: rgba(24, 216, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.semester-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-cyan);
+}
+
+.semester-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.copyright-text {
+    text-align: center;
+    font-size: 9px;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
