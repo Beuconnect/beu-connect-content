@@ -1,0 +1,87 @@
+[
+  {
+    "code": "cse",
+    "name": "Computer Science & Eng.",
+    "icon": "💻"
+  },
+  {
+    "code": "civil",
+    "name": "Civil Engineering",
+    "icon": "🏗️"
+  },
+  {
+    "code": "mechanical",
+    "name": "Mechanical Engineering",
+    "icon": "⚙️"
+  },
+  {
+    "code": "electrical",
+    "name": "Electrical Engineering",
+    "icon": "⚡"
+  },
+  {
+    "code": "ece",
+    "name": "Electronics & Comm. Eng.",
+    "icon": "📡"
+  },
+  {
+    "code": "eee",
+    "name": "Electrical & Electronics",
+    "icon": "🔋"
+  },
+  {
+    "code": "it",
+    "name": "Information Technology",
+    "icon": "🌐"
+  },
+  {
+    "code": "chemical",
+    "name": "Chemical Engineering",
+    "icon": "🧪"
+  },
+  {
+    "code": "mining",
+    "name": "Mining Engineering",
+    "icon": "⛏️"
+  },
+  {
+    "code": "aeronautical",
+    "name": "Aeronautical Engineering",
+    "icon": "🚀"
+  },
+  {
+    "code": "biomedical",
+    "name": "Biomedical Engineering",
+    "icon": "🧬"
+  },
+  {
+    "code": "fire",
+    "name": "Fire Tech. & Safety",
+    "icon": "🔥"
+  },
+  {
+    "code": "food",
+    "name": "Food Technology",
+    "icon": "🍎"
+  },
+  {
+    "code": "robotics",
+    "name": "Robotics & Automation",
+    "icon": "🤖"
+  },
+  {
+    "code": "production",
+    "name": "Production Engineering",
+    "icon": "🏭"
+  },
+  {
+    "code": "textile",
+    "name": "Textile Engineering",
+    "icon": "🧵"
+  },
+  {
+    "code": "biotechnology",
+    "name": "Biotechnology",
+    "icon": "🧬"
+  }
+]
