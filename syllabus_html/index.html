@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEU Connect - Premium Academic Portal</title>
+    <link rel="stylesheet" href="app_browser.css">
+    <style>
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .portal-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .portal-item:hover {
+            background: rgba(24, 216, 255, 0.1);
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        .portal-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .portal-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #13263D 0%, #0D1B2A 100%);
+            border-radius: 24px;
+            margin-bottom: 24px;
+            border: 1px solid var(--card-border);
+        }
+        .hero h1 { margin: 0; font-size: 32px; }
+        .hero p { color: var(--text-secondary); margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>BEU Connect</h1>
+            <p>Premium Browser Syllabus & Resources</p>
+        </div>
+
+        <h2>GATE Syllabus by Branch</h2>
+        <div class="portal-grid">
+            <a href="CS.html" class="portal-item"><span class="portal-icon">💻</span><span class="portal-label">CS</span></a>
+            <a href="ME.html" class="portal-item"><span class="portal-icon">⚙️</span><span class="portal-label">ME</span></a>
+            <a href="CE.html" class="portal-item"><span class="portal-icon">🏗️</span><span class="portal-label">CE</span></a>
+            <a href="EE.html" class="portal-item"><span class="portal-icon">⚡</span><span class="portal-label">EE</span></a>
+            <a href="EC.html" class="portal-item"><span class="portal-icon">📡</span><span class="portal-label">EC</span></a>
+            <a href="DA.html" class="portal-item"><span class="portal-icon">📊</span><span class="portal-label">DA</span></a>
+            <a href="CH.html" class="portal-item"><span class="portal-icon">⚗️</span><span class="portal-label">CH</span></a>
+            <a href="IN.html" class="portal-item"><span class="portal-icon">🔌</span><span class="portal-label">IN</span></a>
+            <a href="BT.html" class="portal-item"><span class="portal-icon">🧬</span><span class="portal-label">BT</span></a>
+            <a href="AE.html" class="portal-item"><span class="portal-icon">✈️</span><span class="portal-label">AE</span></a>
+        </div>
+
+        <h2>Resources</h2>
+        <div class="portal-grid" style="grid-template-columns: 1fr 1fr;">
+            <a href="GATE_Syllabus/exam_gate.html" class="portal-item">
+                <span class="portal-icon">🎓</span><span class="portal-label">GATE Guide</span>
+            </a>
+            <a href="vlsisyllabus.html" class="portal-item">
+                <span class="portal-icon">🔬</span><span class="portal-label">VLSI Syllabus</span>
+            </a>
+        </div>
+
+        <h2>Development Team</h2>
+        <div class="portal-grid" style="grid-template-columns: 1fr 1fr;">
+            <a href="dp1.html" class="portal-item">
+                <span class="portal-icon">👤</span><span class="portal-label">Vikash Kumar</span>
+            </a>
+            <a href="dp2.html" class="portal-item">
+                <span class="portal-icon">👤</span><span class="portal-label">Vivek Kumar</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 BEU Connect Premium
+        </div>
+    </div>
+</body>
+</html>
