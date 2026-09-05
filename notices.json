@@ -1,3 +1,10 @@
 {
-  "notices":[]
+  "notices":[
+     {
+      "id": 1,
+      "message": "🎯 New: GATE Mock Test is now available! 🚀",
+      "link": "",
+      "active": true
+    }
+  ]
 }
