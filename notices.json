@@ -11,6 +11,12 @@
   "message": "📢 This is a new BEU Connect notice.",
   "link": "",
   "active": true
+},
+     {
+  "id": 3,
+  "message": "📢 vikash kr  is a new BEU Connect notice.",
+  "link": "",
+  "active": true
 }
     
   ]
