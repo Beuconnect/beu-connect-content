@@ -1,0 +1,144 @@
+name: Send BEU Connect Notice Notification
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "notices.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  send-notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-auth requests
+
+      - name: Send FCM notification for new notices
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          python <<'PY'
+          import json
+          import os
+          import subprocess
+          import requests
+          from google.oauth2 import service_account
+          from google.auth.transport.requests import Request
+
+          SERVICE_ACCOUNT = os.environ["FIREBASE_SERVICE_ACCOUNT"]
+
+          with open("/tmp/firebase-service-account.json", "w") as f:
+              f.write(SERVICE_ACCOUNT)
+
+          with open("notices.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          notices = data.get("notices", [])
+
+          previous = {}
+          try:
+              result = subprocess.run(
+                  ["git", "show", "HEAD^:notices.json"],
+                  capture_output=True,
+                  text=True,
+                  check=False
+              )
+              if result.returncode == 0:
+                  previous = json.loads(result.stdout)
+          except Exception:
+              previous = {}
+
+          previous_ids = {
+              str(n.get("id"))
+              for n in previous.get("notices", [])
+          }
+
+          credentials = service_account.Credentials.from_service_account_file(
+              "/tmp/firebase-service-account.json",
+              scopes=["https://www.googleapis.com/auth/firebase.messaging"]
+          )
+
+          credentials.refresh(Request())
+          access_token = credentials.token
+
+          project_id = credentials.project_id
+
+          url = (
+              f"https://fcm.googleapis.com/v1/projects/"
+              f"{project_id}/messages:send"
+          )
+
+          headers = {
+              "Authorization": f"Bearer {access_token}",
+              "Content-Type": "application/json; UTF-8",
+          }
+
+          for notice in notices:
+              notice_id = str(notice.get("id", ""))
+              message = str(notice.get("message", "")).strip()
+              link = str(notice.get("link", "")).strip()
+              active = notice.get("active", False)
+
+              if not notice_id or not message:
+                  continue
+
+              if not active:
+                  continue
+
+              if notice_id in previous_ids:
+                  continue
+
+              payload = {
+                  "message": {
+                      "topic": "BEU_CONNECT_NOTICES",
+                      "notification": {
+                          "title": "BEU Connect",
+                          "body": message
+                      },
+                      "data": {
+                          "notice_id": notice_id,
+                          "url": link
+                      }
+                  }
+              }
+
+              response = requests.post(
+                  url,
+                  headers=headers,
+                  json=payload,
+                  timeout=30
+              )
+
+              if response.status_code >= 400:
+                  raise RuntimeError(
+                      f"FCM request failed: {response.status_code} "
+                      f"{response.text}"
+                  )
+
+              print(f"Notification sent for notice ID: {notice_id}")
+
+          print("Notification workflow completed.")
+          PY
+
+      - name: Remove temporary Firebase credentials
+        if: always()
+        run: |
+          rm -f /tmp/firebase-service-account.json
