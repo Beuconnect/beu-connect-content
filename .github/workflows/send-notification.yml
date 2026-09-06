@@ -33,7 +33,7 @@ jobs:
 
       - name: Send FCM notification for new notices
         env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICES_ACCOUNT }}
         run: |
           python <<'PY'
           import json
