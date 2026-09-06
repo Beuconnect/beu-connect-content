@@ -5,7 +5,13 @@
       "message": "🎯 GATE Mock Tests are now available  — start practicing and boost your GATE preparation! 🚀",
       "link": "",
       "active": true
-    }
+    },
+    {
+  "id": 2,
+  "message": "📢 This is a new BEU Connect notice.",
+  "link": "",
+  "active": true
+}
     
   ]
 }
