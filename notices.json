@@ -2,7 +2,7 @@
   "notices":[
      {
       "id": 1,
-      "message": "🎯ANNOUNCEMENT/NOTICE :-",
+      "message": "📢 ANNOUNCEMENT/NOTICE ➜ ",
       "link": "",
       "active": true
     },
@@ -11,13 +11,8 @@
       "message": "🎯 GATE Mock Tests Are Now Available  — Start Practicing And Boost Your GATE Preparation! 🚀",
       "link": "",
       "active": true
-    },
-    {
-      "id": 3,
-      "message": "UPDATE THE APP NOW! 🚀",
-      "link": "",
-      "active": true
     }
+   
    
    
     
