@@ -7,19 +7,26 @@
       "active": true
     },
      
-     
      {
       "id": 2,
-      "message": " BTech 6th Semester Examination Datesheet out",
+      "message": "🎯 WE ARE WORKING ON MORE FREE  GATE Mock Tests. AVAILABLE SOON....",
+      "link": "",
+      "active": false
+    },
+     {
+      "id": 4,
+      "message": " BTech 6th Semester Examination Datesheet Out",
       "link": "https://beu-bih.ac.in/backend/1790602587002-Letter%20No.%202374%20Dated-28.09.2026.pdf",
       "active": true
-     },
-    {
+     }
+     {
       "id": 3,
       "message": " 👍PLEASE SHARE THIS APP TO YOUR BATCHMATES AND JUNIORS",
       "link": "",
       "active": true
      }
+     
+   
     
     
      
