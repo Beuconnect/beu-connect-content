@@ -17,7 +17,7 @@
       "id": 4,
       "message": " BTech 6th Semester Examination Datesheet Out",
       "link": "https://beu-bih.ac.in/backend/1790602587002-Letter%20No.%202374%20Dated-28.09.2026.pdf",
-      "active": true
+      "active": false
      },
      {
       "id": 3,
@@ -25,6 +25,12 @@
       "link": "",
       "active": true
      }
+    {
+      "id": 5,
+      "message": " BTech 4th Semester Examination Form Filling Date  Out",
+      "link": "https://beu-bih.ac.in/backend/1791433253345-Letter%20No.%202540%20%20Dated-07.10.2026.pdf",
+      "active": true
+     },
      
    
     
