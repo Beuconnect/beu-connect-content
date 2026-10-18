@@ -98,6 +98,321 @@
           "verified": false
         }
       ]
+    },
+    
+ 
+    {
+      "subjectId": "structural-analysis",
+      "branch": "CE",
+      "semester": 4,
+      "subjectName": "Structural Analysis",
+      "topics": [
+        {
+          "topicId": "sa-influence-line-diagrams",
+          "topicName": "Influence Line Diagrams (ILD)",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Influence line for shear force and bending moment",
+            "Maximum shear force and bending moment due to moving loads",
+            "Influence lines for support reactions",
+            "Influence lines for truss member forces",
+            "Muller-Breslau's principle"
+          ],
+          "revisionNote": "Practise ILD problems for beams, arches, support reactions and truss members; revise Muller-Breslau's principle.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-slope-deflection-method",
+          "topicName": "Slope-Deflection Method",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Slope-deflection equations",
+            "Sign conventions and assumptions",
+            "Support moments and reactions of continuous beams",
+            "Analysis of beams with point loads"
+          ],
+          "revisionNote": "Practise calculating end moments and reactions for continuous beams using the slope-deflection method.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-moment-distribution-method",
+          "topicName": "Moment Distribution Method",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Distribution factor",
+            "Carry-over moment",
+            "Support moments in frames",
+            "Shear force and bending moment diagrams for continuous beams"
+          ],
+          "revisionNote": "Revise distribution factors and carry-over moments, then solve beam and frame problems.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-two-hinged-arches",
+          "topicName": "Two-Hinged Arches",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Horizontal thrust",
+            "Two-hinged parabolic arch",
+            "Two-hinged semicircular arch under varying load",
+            "Influence line for horizontal thrust and bending moment",
+            "Maximum positive and negative bending moments"
+          ],
+          "revisionNote": "Prepare horizontal-thrust derivations and numerical problems on two-hinged arches and their influence lines.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-matrix-method",
+          "topicName": "Matrix Methods of Structural Analysis",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Flexibility matrix",
+            "Stiffness matrix",
+            "Stiffness matrix for a frame",
+            "Flexibility matrix for a simply supported beam",
+            "Advantages of matrix methods"
+          ],
+          "revisionNote": "Understand flexibility and stiffness matrices and practise developing the matrix for the given coordinates or degrees of freedom.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-energy-methods-deflection",
+          "topicName": "Strain Energy and Deflection Methods",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Castigliano's second theorem",
+            "Strain energy due to bending of beams",
+            "Unit load method",
+            "Difference between strain energy method and unit load method",
+            "Vertical deflection of trusses"
+          ],
+          "revisionNote": "Revise theorem statements and differences, and practise deflection numericals for beams and trusses.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-virtual-work-reciprocal-theorems",
+          "topicName": "Virtual Work and Reciprocal Theorems",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Principle of virtual work",
+            "Real work and virtual work",
+            "Betti's theorem of reciprocal work",
+            "Maxwell's reciprocal theorem"
+          ],
+          "revisionNote": "Learn the principles and assumptions, and prepare concise comparisons between real and virtual work.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-force-and-displacement-methods",
+          "topicName": "Force Method and Displacement Method",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Comparison between force method and displacement method",
+            "Degree of static indeterminacy",
+            "Degree of kinematic indeterminacy",
+            "Flexibility and stiffness concepts"
+          ],
+          "revisionNote": "Prepare a comparison table and revise how static and kinematic indeterminacy affect analysis methods.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-continuous-beams-three-moment",
+          "topicName": "Continuous Beams and Three-Moment Theorem",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Theorem of three moments",
+            "Support reactions of continuous beams",
+            "Support moments",
+            "Influence lines for reactions at supports"
+          ],
+          "revisionNote": "Practise continuous-beam reactions and support moments; revise the use of the three-moment theorem.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-truss-analysis",
+          "topicName": "Truss Analysis",
+          "priority": "Medium",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Axial forces in truss members",
+            "Deflection of a truss joint",
+            "Stiffness method for trusses",
+            "Influence lines for truss member forces"
+          ],
+          "revisionNote": "Revise axial-force behaviour and practise truss deflection and stiffness-method problems.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-frames-analysis",
+          "topicName": "Analysis of Frames",
+          "priority": "Medium",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Portal method",
+            "Cantilever method",
+            "Moment distribution analysis of frames",
+            "Stiffness method for frames"
+          ],
+          "revisionNote": "Learn the steps and assumptions of portal and cantilever methods, and practise frame analysis.",
+          "verified": true
+          },
+        {
+          "topicId": "sa-fixed-three-hinged-arches",
+          "topicName": "Three-Hinged and Fixed Arches",
+          "priority": "Medium",
+          "yearsAppeared": [
+            2025
+          ],
+          "appearanceCount": 1,
+          "subtopics": [
+            "Comparison of three-hinged and fixed arches",
+            "Behaviour of arches under loading"
+          ],
+          "revisionNote": "Prepare the behavioural comparison and key differences under loading.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-plastic-analysis",
+          "topicName": "Plastic Analysis of Structures",
+          "priority": "Medium",
+          "yearsAppeared": [
+            2025
+          ],
+          "appearanceCount": 1,
+          "subtopics": [
+            "Collapse load of continuous beams",
+            "Plastic moment",
+            "Shape factor",
+            "Shape factor for circular and triangular sections"
+          ],
+          "revisionNote": "Revise shape factor definitions and practise collapse-load problems for continuous beams.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-column-design",
+          "topicName": "Column Design",
+          "priority": "Low",
+          "yearsAppeared": [
+            2025
+          ],
+          "appearanceCount": 1,
+          "subtopics": [
+            "Design steps for columns under axial load",
+            "Biaxial bending"
+          ],
+          "revisionNote": "Review the design sequence for columns subjected to axial load and biaxial bending.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-statically-indeterminate-structures",
+          "topicName": "Statically Indeterminate Structures",
+          "priority": "Medium",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Static indeterminacy of beams",
+            "Equilibrium conditions for stability",
+            "Force-displacement requirements",
+            "Support and loading effects"
+          ],
+          "revisionNote": "Practise identifying static indeterminacy and revise the conditions used in structural analysis.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-strain-energy-and-work-theorems",
+          "topicName": "Strain Energy and Work Theorems",
+          "priority": "Medium",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Strain energy due to bending",
+            "Castigliano's second theorem",
+            "Betti's theorem",
+            "Principle of virtual work"
+          ],
+          "revisionNote": "Revise theorem statements and applications; some concepts overlap with deflection methods.",
+          "verified": true
+        },
+        {
+          "topicId": "sa-short-theory-concepts",
+          "topicName": "Short Theory: Structural Analysis Concepts",
+          "priority": "Low",
+          "yearsAppeared": [
+            2023,
+            2025
+          ],
+          "appearanceCount": 2,
+          "subtopics": [
+            "Eddy's theorem for an arch",
+            "Distribution factor",
+            "Assumptions and sign conventions in slope-deflection method",
+            "Advantages of matrix methods"
+          ],
+          "revisionNote": "Use this as a final revision checklist for short notes and conceptual questions.",
+          "verified": true
+        }
+      ]
     }
+
+    
   ]
 }
