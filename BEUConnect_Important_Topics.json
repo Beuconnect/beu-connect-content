@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "1.0.1",
+  "lastUpdated": "2026-10-18",
+  "subjects": [
+    {
+      "subjectId": "web-internet-technology",
+      "branch": "CSE",
+      "semester": 6,
+      "subjectName": "Web and Internet Technology",
+      "topics": [
+        {
+          "topicId": "wit-xml-structure-dtd",
+          "topicName": "XML Structure and DTD",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2024,
+            2025
+          ],
+          "appearanceCount": 3,
+          "subtopics": [
+            "XML Structure",
+            "Features",
+            "Importance",
+            "Internal DTD",
+            "External DTD"
+          ],
+          "revisionNote": "Prepare XML structure, features, importance, and internal/external DTD.",
+          "verified": false
+        },
+        {
+          "topicId": "wit-xml-schema-vs-dtd",
+          "topicName": "XML Schema vs DTD",
+          "priority": "High",
+          "yearsAppeared": [
+            2023,
+            2024,
+            2025
+          ],
+          "appearanceCount": 3,
+          "subtopics": [
+            "XML Schema",
+            "DTD",
+            "Differences"
+          ],
+          "revisionNote": "Revise the main differences between XML Schema and DTD.",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "subjectId": "computer-networks",
+      "branch": "CSE",
+      "semester": 6,
+      "subjectName": "Computer Networks",
+      "topics": [
+        {
+          "topicId": "cn-osi-model",
+          "topicName": "OSI Model",
+          "priority": "High",
+          "yearsAppeared": [],
+          "appearanceCount": 0,
+          "subtopics": [
+            "Seven Layers",
+            "Functions of Each Layer",
+            "Layer-wise Examples"
+          ],
+          "revisionNote": "Learn all seven layers and the main function of each layer.",
+          "verified": false
+        },
+        {
+          "topicId": "cn-tcp-vs-udp",
+          "topicName": "TCP vs UDP",
+          "priority": "Medium",
+          "yearsAppeared": [],
+          "appearanceCount": 0,
+          "subtopics": [
+            "Connection-oriented",
+            "Connectionless",
+            "Reliability",
+            "Differences"
+          ],
+          "revisionNote": "Compare reliability, connection setup, speed, and common uses.",
+          "verified": false
+        },
+        {
+          "topicId": "cn-congestion-control",
+          "topicName": "Congestion Control",
+          "priority": "Low",
+          "yearsAppeared": [],
+          "appearanceCount": 0,
+          "subtopics": [
+            "Leaky Bucket",
+            "Token Bucket"
+          ],
+          "revisionNote": "Understand the purpose and basic working of both algorithms.",
+          "verified": false
+        }
+      ]
+    }
+  ]
+}
