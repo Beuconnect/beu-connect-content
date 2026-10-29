@@ -30,15 +30,20 @@
       "id": 6,
       "message": " BTech 4th Semester Examination  Datesheet  Out",
       "link": "https://beu-bih.ac.in/backend/1792688454896-Letter%20No%202562%20B.TEch%20B.Arch%204th%20sem%20Routine.pdf",
-      "active": true
+      "active": false
      },
     {
       "id": 7,
       "message": " B. Tech Supplementary Examination Result of Semester 1 to 8 released",
       "link": "https://beu-bih.ac.in/result-one",
+      "active": false
+     },
+    {
+      "id": 8,
+      "message": "📢 Best Wishes to All 4th Semester Students! 🎓 Prepare with VVI Topics & PYQs on the BEU Connect App. Study Smart, Score Better! 🌟",
+      "link": "",
       "active": true
      }
-    
      
    
     
