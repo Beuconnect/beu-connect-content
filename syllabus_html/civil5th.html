@@ -3,802 +3,932 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07152e">
-<title>BEU Connect | 5th Semester Civil Engineering Syllabus</title>
+<title>BEU Connect | Civil Engineering Semester V</title>
+
 <style>
-:root{--bg:#061225;--panel:#0b1d38;--panel2:#102747;--cyan:#25d9e8;--blue:#2878d8;--text:#eaf3ff;--muted:#9bb0ca;--line:#1c4968;--gold:#f4c76b}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 85% 0%,#10335a 0,transparent 34%),var(--bg);color:var(--text);font-family:Ubuntu,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
-button{font:inherit}
-.app{max-width:1100px;margin:auto;padding:0 18px 50px}
-.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #173653;margin-bottom:28px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
-.brand-mark{width:43px;height:43px;border-radius:13px;background:linear-gradient(135deg,#1c7bd3,#21d5df);display:grid;place-items:center;color:#031329;font-weight:900;font-size:20px;box-shadow:0 6px 22px #13b9d344}
-.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;font-weight:600}
-.top-tag{font-size:12px;color:var(--cyan);border:1px solid #1b7181;padding:6px 11px;border-radius:20px}
-.hero{padding:28px 26px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(120deg,#102c50dd,#0a1b34ee);position:relative;overflow:hidden;margin-bottom:22px}
-.hero:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;border:1px solid #1d91b433;right:-60px;top:-100px;box-shadow:0 0 0 25px #1d91b311,0 0 0 55px #1d91b30b}
-.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-.hero h1{font-size:clamp(26px,5vw,40px);line-height:1.15;margin:8px 0}
-.hero p{margin:8px 0 0;color:var(--muted)}
-.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
-.chip{font-size:12px;color:#c9eaff;background:#102f50;border:1px solid #235575;padding:6px 10px;border-radius:20px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
-.stat{background:var(--panel);border:1px solid var(--line);padding:15px;border-radius:15px}
-.stat strong{display:block;color:var(--cyan);font-size:23px}
-.stat span{color:var(--muted);font-size:12px}
-.card{background:linear-gradient(145deg,#0c203c,#091a32);border:1px solid var(--line);border-radius:17px;padding:20px;margin:18px 0;box-shadow:0 10px 28px #0002}
-.card h2{font-size:18px;margin:0 0 14px}
-.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer}
-.chevron{color:var(--cyan);transition:transform .2s}
-.collapsed .chevron{transform:rotate(-90deg)}
-.credits-wrap{overflow-x:auto;margin-top:14px}
-table{width:100%;border-collapse:collapse;min-width:650px;font-size:13px}
-th{background:#123455;color:#bcefff;font-weight:700;text-align:center}
-th:first-child,td:first-child{text-align:left}
-td,th{padding:11px 12px;border-bottom:1px solid #1b3a58}
-td:not(:first-child){text-align:center}
-.total-row td{font-weight:800;color:var(--cyan);background:#102d49}
-.subject-group{margin:22px 0}
-.group-title{font-size:16px;margin:0 0 12px;color:#bcefff}
-.tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.tab{border:1px solid #204766;background:#0c2340;color:#c9d9ec;border-radius:12px;padding:12px;text-align:left;cursor:pointer;transition:.2s;font-size:13px;min-height:48px}
-.tab:hover{border-color:var(--cyan);background:#103153}
-.tab.active{background:linear-gradient(110deg,#1265a3,#087d91);border-color:#4ce7ef;color:white;box-shadow:0 5px 18px #05b9d322}
-.tab .code{display:block;font-size:10px;color:#8feaf0;margin-top:3px}
-.subject{display:none;animation:fade .25s ease}
-.subject.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-.subject-title{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:15px}
-.subject-title h2{margin:0;font-size:20px}
-.course-code{color:var(--cyan);font-size:12px;border:1px solid #1b6478;border-radius:20px;padding:4px 9px;white-space:nowrap}
-.objective{color:#c0d0e2;background:#0c2945;border-left:3px solid var(--cyan);padding:12px 15px;border-radius:0 10px 10px 0;margin:12px 0 18px;font-size:14px}
-.unit{border:1px solid #1a3a58;border-radius:13px;margin:11px 0;overflow:hidden;background:#0a1b32}
-.unit summary{list-style:none;cursor:pointer;padding:13px 15px;background:#102a48;display:flex;justify-content:space-between;gap:12px;font-weight:700;color:#e4f5ff}
-.unit summary::-webkit-details-marker{display:none}
-.unit summary:after{content:"＋";color:var(--cyan);font-size:18px}
-.unit[open] summary:after{content:"−"}
-.hours{color:#8feaf0;font-size:11px;font-weight:600;white-space:nowrap}
-.unit-body{padding:13px 17px;color:#c3d2e4;font-size:14px}
-.unit-body ul{padding-left:20px;margin:5px 0}
-.unit-body li{margin:6px 0}
-.unit-body p{margin:7px 0}
-.subhead{color:var(--cyan);font-weight:700;margin:18px 0 8px}
-.books{padding-left:22px;color:#c4d3e5;font-size:13px}
-.books li{padding:3px 0}
-.lab-list{padding-left:22px;color:#c8d8e9}
-.lab-list li{margin:8px 0}
-.notice{color:var(--muted);font-size:13px}
-.footer{text-align:center;color:#718aa7;font-size:12px;padding:28px 10px 5px;border-top:1px solid #173653;margin-top:35px}
-.footer strong{color:#b7d7ee}
-@media(max-width:650px){
-.app{padding:0 12px 35px}
-.topbar{height:65px}
-.hero{padding:23px 18px}
-.stats{grid-template-columns:repeat(2,1fr)}
-.tabs{grid-template-columns:1fr}
-.card{padding:15px}
-.subject-title h2{font-size:18px}
-.top-tag{font-size:10px}
+:root {
+    --bg: #071426;
+    --panel: #10223b;
+    --panel2: #142b48;
+    --cyan: #37d6f5;
+    --blue: #648cff;
+    --text: #edf5ff;
+    --muted: #9db0c9;
+    --border: rgba(130,170,220,.17);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+header {
+    padding: 28px 7%;
+    background: linear-gradient(120deg,#102b50,#09172b);
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    color: var(--cyan);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+header h1 {
+    font-size: clamp(25px,4vw,38px);
+    margin-bottom: 9px;
+}
+
+header p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 28px 5%;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.stat {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.stat strong {
+    display: block;
+    color: var(--cyan);
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.stat span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.search-box {
+    margin: 22px 0;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 17px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    color: white;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    border-color: var(--cyan);
+}
+
+.section-heading {
+    margin: 30px 0 15px;
+    font-size: 19px;
+}
+
+.subject-list {
+    display: grid;
+    gap: 14px;
+}
+
+.subject {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.subject-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 19px;
+    cursor: pointer;
+}
+
+.subject-head:hover {
+    background: var(--panel2);
+}
+
+.subject-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.subject-code {
+    color: var(--cyan);
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.subject-meta {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.arrow {
+    color: var(--cyan);
+    font-size: 20px;
+    transition: .2s;
+}
+
+.subject.open .arrow {
+    transform: rotate(180deg);
+}
+
+.subject-body {
+    display: none;
+    padding: 0 19px 20px;
+}
+
+.subject.open .subject-body {
+    display: block;
+}
+
+.unit {
+    background: #0b1b30;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.unit-head {
+    padding: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.unit-head:hover {
+    background: #142b48;
+}
+
+.unit-content {
+    display: none;
+    padding: 0 15px 15px;
+    color: #c6d5e8;
+    font-size: 13px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.unit.active .unit-content {
+    display: block;
+}
+
+.hours {
+    color: var(--cyan);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.lab-list {
+    padding: 5px 5px 5px 22px;
+    color: #c6d5e8;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 35px;
+    background: #091a2e;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+footer strong {
+    color: var(--cyan);
+}
+
+@media(max-width:600px) {
+    .stats {
+        grid-template-columns: repeat(3,1fr);
+        gap: 8px;
+    }
+    .stat {
+        padding: 13px 9px;
+    }
+    .stat strong {
+        font-size: 20px;
+    }
+    .stat span {
+        font-size: 10px;
+    }
+    .subject-head {
+        padding: 15px;
+    }
 }
 </style>
 </head>
+
 <body>
-<div class="app">
-<header class="topbar">
-<div class="brand">
-<div class="brand-mark">BC</div>
-<div>BEU CONNECT<small>LEARN · GROW · SUCCEED</small></div>
-</div>
-<div class="top-tag">CIVIL ENGINEERING</div>
+
+<header>
+    <div class="brand">BEU CONNECT · LEARN · GROW · SUCCEED</div>
+    <h1>Civil Engineering</h1>
+    <p>Semester V · B.Tech · Bihar Engineering University</p>
+    <p>Session 2024 onwards</p>
 </header>
 
-<section class="hero">
-<div class="eyebrow">B.Tech · Session 2024 onwards</div>
-<h1>5th Semester Syllabus</h1>
-<p>Department of Civil Engineering · Bihar Engineering University</p>
-<div class="hero-meta">
-<span class="chip">Semester V</span>
-<span class="chip">Theory + Practical</span>
-<span class="chip">Complete course outline</span>
-</div>
-</section>
+<main class="container">
 
-<div class="stats">
-<div class="stat"><strong>26</strong><span>Total credits (as listed)</span></div>
-<div class="stat"><strong>8</strong><span>Theory / audit courses</span></div>
-<div class="stat"><strong>4</strong><span>Practical labs</span></div>
-<div class="stat"><strong>4 weeks</strong><span>Internship-II</span></div>
-</div>
+    <div class="stats">
+        <div class="stat">
+            <strong>26</strong>
+            <span>Total Credits</span>
+        </div>
+        <div class="stat">
+            <strong>6</strong>
+            <span>Core Subjects</span>
+        </div>
+        <div class="stat">
+            <strong>4</strong>
+            <span>Practical Labs</span>
+        </div>
+    </div>
 
-<section class="card" id="credits-card">
-<div class="section-head" id="credits-toggle">
-<h2>Course & Credits Table</h2>
-<span class="chevron">⌄</span>
-</div>
-<div class="credits-wrap" id="credits-content">
-<table>
-<thead>
-<tr><th>Course Title</th><th>Course Code</th><th>L</th><th>T</th><th>P</th><th>Credits</th><th>ESE</th><th>IA</th></tr>
-</thead>
-<tbody>
-<tr><td>Structural Design-I</td><td>101501</td><td>3</td><td>0</td><td>0</td><td>3</td><td>70</td><td>30</td></tr>
-<tr><td>Environmental Engineering-I</td><td>101502</td><td>3</td><td>1</td><td>0</td><td>4</td><td>70</td><td>30</td></tr>
-<tr><td>Engineering Economics, Estimation & Costing</td><td>101503</td><td>2</td><td>0</td><td>0</td><td>2</td><td>70</td><td>30</td></tr>
-<tr><td>Hydrology and Water Resources Engineering</td><td>101504</td><td>3</td><td>0</td><td>0</td><td>3</td><td>70</td><td>30</td></tr>
-<tr><td>Professional Practice, Law & Ethics</td><td>101505</td><td>3</td><td>0</td><td>0</td><td>0</td><td>—</td><td>—</td></tr>
-<tr><td>Disability, Accessibility and Universal Design</td><td>101506</td><td>3</td><td>0</td><td>0</td><td>0</td><td>—</td><td>—</td></tr>
-<tr><td>Open Elective Course-I</td><td>1015XX</td><td>3</td><td>0</td><td>0</td><td>3</td><td>70</td><td>30</td></tr>
-<tr><td>Program Elective-I</td><td>1015XX</td><td>3</td><td>0</td><td>0</td><td>3</td><td>70</td><td>30</td></tr>
-<tr><td>Structural Design-I Lab</td><td>101501P</td><td>0</td><td>0</td><td>2</td><td>1</td><td>30</td><td>20</td></tr>
-<tr><td>Environmental Engineering-I Lab</td><td>101502P</td><td>0</td><td>0</td><td>2</td><td>1</td><td>30</td><td>20</td></tr>
-<tr><td>Engineering Economics, Estimation & Costing Lab</td><td>101503P</td><td>0</td><td>0</td><td>2</td><td>1</td><td>30</td><td>20</td></tr>
-<tr><td>Hydrology and Water Resources Engineering Lab</td><td>101504P</td><td>0</td><td>0</td><td>2</td><td>1</td><td>75</td><td>25</td></tr>
-<tr><td>Internship-II</td><td>104506</td><td colspan="3">4 Weeks</td><td>4</td><td>30</td><td>20</td></tr>
-<tr class="total-row"><td colspan="5">TOTAL (as printed in source PDF)</td><td>26</td><td colspan="2">900</td></tr>
-</tbody>
-</table>
-</div>
-<p class="notice">Note: Course codes, credits and assessment values are reproduced from the uploaded syllabus table.</p>
-</section>
-<section class="card" id="subjects">
-<h2>Explore Syllabus</h2>
+    <div class="search-box">
+        <input type="text" id="searchInput"
+        placeholder="Search subject, course code or unit..."
+        oninput="searchSubjects()">
+    </div>
 
-<div class="subject-group">
-<h3 class="group-title">Theory Subjects</h3>
-<div class="tabs" id="theory-tabs">
-<button class="tab active" data-subject="s101501">Structural Design-I <span class="code">101501</span></button>
-<button class="tab" data-subject="s101502">Environmental Engineering-I <span class="code">101502</span></button>
-<button class="tab" data-subject="s101503">Engineering Economics, Estimation & Costing <span class="code">101503</span></button>
-<button class="tab" data-subject="s101504">Hydrology and Water Resources Engineering <span class="code">101504</span></button>
-<button class="tab" data-subject="s101505">Professional Practice, Law & Ethics <span class="code">101505</span></button>
-<button class="tab" data-subject="s101506">Disability, Accessibility and Universal Design <span class="code">101506</span></button>
-<button class="tab" data-subject="sopen">Open Elective Course-I <span class="code">1015XX</span></button>
-<button class="tab" data-subject="sprogram">Program Elective-I <span class="code">1015XX</span></button>
-</div>
-</div>
+    <h2 class="section-heading">Theory Subjects</h2>
 
-<div class="subject-group">
-<h3 class="group-title">Labs & Internship</h3>
-<div class="tabs" id="lab-tabs">
-<button class="tab" data-subject="l101501">Structural Design-I Lab <span class="code">101501P</span></button>
-<button class="tab" data-subject="l101502">Environmental Engineering-I Lab <span class="code">101502P</span></button>
-<button class="tab" data-subject="l101503">Engineering Economics, Estimation & Costing Lab <span class="code">101503P</span></button>
-<button class="tab" data-subject="l101504">Hydrology and Water Resources Engineering Lab <span class="code">101504P</span></button>
-<button class="tab" data-subject="internship">Internship-II <span class="code">104506 · 4 Weeks</span></button>
-</div>
-</div>
-</section>
+    <div class="subject-list" id="theoryList">
 
-<div id="syllabus-content">
+        <!-- STRUCTURAL DESIGN-I -->
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101501 · 3 CREDITS</div>
+                    <div class="subject-title">Structural Design-I</div>
+                    <div class="subject-meta">Lecture: 3 · ESE: 70 · IA: 30</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
 
-<section class="card subject active" id="s101501">
-<div class="subject-title">
-<h2>Structural Design-I</h2>
-<span class="course-code">101501 · 3 Credits</span>
-</div>
+            <div class="subject-body">
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 1 · Fundamentals of RC Design and Working Stress Method
+                        <span class="hours">6 hrs</span>
+                    </div>
+                    <div class="unit-content">Concepts of Reinforced Concrete: Introduction to RC, stress-strain characteristics of concrete and steel, and elastic theory.
 
-<div class="unit"><details open>
-<summary>Unit 1.0 — Fundamentals of RC Design and the Working Stress Method <span class="hours">6 hrs</span></summary>
-<div class="unit-body">
-<p>This unit introduces the basic material properties of concrete and steel, and the foundational design concepts using elastic theory. It covers the traditional working stress method (WSM) and its application to different types of beam sections.</p>
-<ul>
-<li>Concepts of Reinforced Concrete: introduction to RC, stress-strain characteristics of concrete and steel, and elastic theory.</li>
-<li>Working Stress Method: design philosophy and assumptions of the method.</li>
-<li>Singly Reinforced Beam Analysis and Design: analysis and design of balanced, under-reinforced, and over-reinforced rectangular sections using WSM.</li>
-</ul>
-</div></details></div>
+Working Stress Method: Design philosophy and assumptions of the method.
 
-<div class="unit"><details>
-<summary>Unit 2.0 — Limit State Method: Principles and Design of Beams <span class="hours">9 hrs</span></summary>
-<div class="unit-body">
-<p>This unit transitions to the modern limit state method (LSM) of design and applies its concepts to beams for flexure, shear and torsion.</p>
-<ul>
-<li>Concepts of LSM: principles of probability and reliability, characteristic loads and strengths, partial safety factors for loads and materials, and limit states of collapse and serviceability.</li>
-<li>Design of beams for flexure: singly reinforced, doubly reinforced, rectangular and T-sections.</li>
-<li>Design for shear and bond: shear resistance, shear reinforcement, bond and anchorage.</li>
-<li>Design for bending and torsion: beams subjected to combined bending and torsion as per IS Code recommendations.</li>
-</ul>
-</div></details></div>
+Singly Reinforced Beam Analysis and Design: Analysis and design of balanced, under-reinforced, and over-reinforced rectangular sections using WSM.</div>
+                </div>
 
-<div class="unit"><details>
-<summary>Unit 3.0 — Design of Compression Members (Columns) <span class="hours">7 hrs</span></summary>
-<div class="unit-body">
-<p>Design of columns supporting axial and bending loads, including short and slender columns.</p>
-<ul>
-<li>Design of short columns subjected to direct compression.</li>
-<li>Design of columns subjected to combined axial load and uni-axial bending moment as per IS Code methods.</li>
-<li>Design of columns for axial load and bi-axial bending moment.</li>
-</ul>
-</div></details></div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 2 · Limit State Method: Principles and Design of Beams
+                        <span class="hours">9 hrs</span>
+                    </div>
+                    <div class="unit-content">Concepts of Limit State Method: Principles of probability and reliability, characteristic loads and strengths, partial safety factors for loads and materials, and limit states of collapse and serviceability.
 
-<div class="unit"><details>
-<summary>Unit 4.0 — Design of Slabs and Staircases <span class="hours">6 hrs</span></summary>
-<div class="unit-body">
-<p>Design of common slab systems and different types of staircases.</p>
-<ul>
-<li>Design of one-way and two-way slabs.</li>
-<li>Design considerations for flat slabs.</li>
-<li>Design of dog-legged and open-well type staircases.</li>
-</ul>
-</div></details></div>
+Design of Beams for Flexure: Singly reinforced, doubly reinforced, rectangular and T-sections.
 
-<div class="unit"><details>
-<summary>Unit 5.0 — Design of Foundations <span class="hours">6 hrs</span></summary>
-<div class="unit-body">
-<p>Design of concrete foundations for transferring building loads to supporting soil.</p>
-<ul>
-<li>Design of square and rectangular isolated footings subjected to axial load and moments.</li>
-<li>Design of combined footings for supporting multiple columns.</li>
-</ul>
-</div></details></div>
+Design for Shear and Bond: Shear resistance, shear reinforcement, bond and anchorage.
 
-<div class="unit"><details>
-<summary>Unit 6.0 — Prestressed Concrete <span class="hours">8 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Principles of prestressed concrete: basic principles, materials, and methods of prestressing (pre-tensioning and post-tensioning).</li>
-<li>Losses in prestress: elastic shortening, creep, shrinkage and friction.</li>
-<li>Analysis of prestressed sections: rectangular, T-section, box section and girders subjected to prestress and external loads.</li>
-<li>Design of post-tensioned slabs.</li>
-</ul>
-</div></details></div>
+Design for Bending and Torsion: Beams subjected to combined bending and torsion as per IS Code recommendations.</div>
+                </div>
 
-<h3 class="subhead">Text / Reference Books & Codes</h3>
-<ol class="books">
-<li>Jain and Jaikrishna, <i>Plain and Reinforced Concrete</i>, Vol. I, Nemchand Brothers.</li>
-<li>V. L. Shah and Karve, <i>Limit State Design - Reinforced Concrete Structures</i>.</li>
-<li>N. Krishna Raju, <i>Pre-stressed Concrete</i>, Tata McGraw Hill.</li>
-<li>P. Dayaratnam, <i>Design of Reinforced Concrete Structures</i>, Oxford & IBH.</li>
-<li>T.Y. Lin, <i>Design of Prestressed Concrete Structures</i>, John Wiley and Sons, 2010.</li>
-<li>P.D. Arthur and V. Ramkrishnan, <i>Ultimate Strength Design for Structural Concrete</i>.</li>
-<li>B.P. Hughes, <i>Limit State Theory for Reinforced Concrete Design</i>, Pitman.</li>
-<li>IS 456 (2000), Plain and Reinforced Concrete.</li>
-<li>IS 875 (1987), Part I — Dead Loads; Part II — Imposed Loads.</li>
-<li>IS 875 (2015), Part III — Wind Loads; IS 875 (1987), Part IV — Snow Loads.</li>
-</ol>
-</section>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 3 · Design of Compression Members (Columns)
+                        <span class="hours">7 hrs</span>
+                    </div>
+                    <div class="unit-content">Design for Axial Loads: Short columns subjected to direct compression.
 
-<section class="card subject" id="s101502">
-<div class="subject-title">
-<h2>Environmental Engineering-I</h2>
-<span class="course-code">101502 · 4 Credits</span>
-</div>
+Design for Uni-axial Bending: Columns subjected to combined axial load and uni-axial bending moment.
 
-<div class="unit"><details open>
-<summary>Unit 1.0 — Water <span class="hours">10 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Sources of water and quality issues.</li>
-<li>Water quality requirement for different beneficial uses, water quality standards, water quality indices and water safety plans.</li>
-<li>Water supply systems; need for planned water supply schemes.</li>
-<li>Water demand: industrial and agricultural water requirements.</li>
-<li>Components of water supply system; transmission of water; distribution system.</li>
-<li>Various valves used in W/S systems; service reservoirs and design.</li>
-</ul>
-</div></details></div>
+Design for Bi-axial Bending: Columns subjected to axial load and bi-axial bending moment.</div>
+                </div>
 
-<div class="unit"><details>
-<summary>Unit 2.0 — Water Treatment <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<p>Aeration, sedimentation, coagulation-flocculation, filtration, disinfection, and advanced treatments like adsorption, ion exchange and membrane processes.</p>
-</div></details></div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 4 · Design of Slabs and Staircases
+                        <span class="hours">6 hrs</span>
+                    </div>
+                    <div class="unit-content">Design of one-way and two-way slabs.
 
-<div class="unit"><details>
-<summary>Unit 3.0 — Air: Composition, Pollution and Monitoring <span class="hours">7 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Composition and properties of air.</li>
-<li>Quantification and monitoring of air pollutants.</li>
-<li>Air pollution and occupational hazards.</li>
-<li>Urban air pollution and automobile pollution.</li>
-<li>Chemistry of combustion.</li>
-</ul>
-</div></details></div>
+Design of flat slabs: Design considerations.
 
-<div class="unit"><details>
-<summary>Unit 4.0 — Automobile Engines and Air Quality <span class="hours">7 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Automobile engines, quality of fuel, operating conditions and interrelationship.</li>
-<li>Air quality standards.</li>
-<li>Control measures for air pollution, construction and limitations.</li>
-</ul>
-</div></details></div>
+Design of staircases: Dog-legged and open-well type staircases.</div>
+                </div>
 
-<div class="unit"><details>
-<summary>Unit 5.0 — Noise <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<p>Basic concept, measurement and various control methods.</p>
-</div></details></div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 5 · Design of Foundations
+                        <span class="hours">6 hrs</span>
+                    </div>
+                    <div class="unit-content">Design of Isolated Footings: Square and rectangular isolated footings subjected to axial load and moments.
 
-<div class="unit"><details>
-<summary>Unit 6.0 — Building Plumbing <span class="hours">8 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Introduction to various types of home plumbing systems for water supply and waste water disposal.</li>
-<li>High-rise building plumbing.</li>
-<li>Pressure reducing valves, break pressure tanks and storage tanks.</li>
-<li>Building drainage for high-rise buildings.</li>
-<li>Various kinds of fixtures and fittings used.</li>
-</ul>
-</div></details></div>
+Design of Combined Foundations: Combined footings for supporting multiple columns.</div>
+                </div>
 
-<h3 class="subhead">Text / Reference</h3>
-<ol class="books">
-<li>Gilbert Masters, <i>Introduction to Environmental Engineering and Science</i>, Prentice Hall.</li>
-<li>P. Aarne Vesilind and Susan M. Morgan, <i>Introduction to Environmental Engineering</i>, 2nd edition, 2008.</li>
-<li>Peavy, Rowe and Tchobanoglous, <i>Environmental Engineering</i>, McGraw Hill, 1985.</li>
-<li>Metcalf and Eddy, <i>Wastewater Engineering: Treatment, Disposal and Reuse</i>, Tata McGraw-Hill.</li>
-<li><i>Manual on Water Supply and Treatment</i>, Ministry of Urban Development.</li>
-<li>S.M. Patil, <i>Plumbing Engineering: Theory, Design and Practice</i>, 1999.</li>
-<li>Tchobanoglous, Theissen & Vigil, <i>Integrated Solid Waste Management</i>.</li>
-<li><i>Manual on Sewerage and Sewage Treatment Systems</i>, CPHEEO, Parts A, B and C.</li>
-</ol>
-</section>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 6 · Prestressed Concrete
+                        <span class="hours">8 hrs</span>
+                    </div>
+                    <div class="unit-content">Principles of Prestressed Concrete: Basic principles, materials, pre-tensioning and post-tensioning.
 
-<section class="card subject" id="s101503">
-<div class="subject-title">
-<h2>Engineering Economics, Estimation & Costing</h2>
-<span class="course-code">101503 · 2 Credits</span>
-</div>
+Losses in Prestress: Elastic shortening, creep, shrinkage and friction.
 
-<div class="unit"><details open>
-<summary>Unit 1.0 — Economics: Principles and Methodology <span class="hours">8 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Basic principles and methodology of economics.</li>
-<li>Demand/supply, elasticity, government policies and application.</li>
-<li>Theory of the firm and market structure.</li>
-<li>Basic macro-economic concepts: GDP, GNP, NI, disposable income and identities for closed and open economies.</li>
-<li>Aggregate demand and supply (IS/LM); price indices (WPI/CPI); interest rates; direct and indirect taxes.</li>
-<li>Public sector economics: welfare, externalities and labour market.</li>
-<li>Monetary and financial system; central bank and monetary aggregates; commercial banks and their functions; capital and debt markets.</li>
-<li>Monetary and fiscal policy tools and their impact on the economy — inflation and Phillips Curve.</li>
-</ul>
-</div></details></div>
+Analysis of Prestressed Sections: Rectangular, T-section, box section and girders subjected to prestress and external loads.
 
-<div class="unit"><details>
-<summary>Unit 2.0 — Business / Managerial Economics <span class="hours">7 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Elements of business/managerial economics and forms of organizations.</li>
-<li>Cost and cost control: techniques, types of costs, lifecycle costs, budgets and break-even analysis.</li>
-<li>Capital budgeting; application of linear programming.</li>
-<li>Investment analysis: NPV, ROI, IRR, payback period, depreciation and time value of money (present and future worth of cash flows).</li>
-<li>Business forecasting — elementary techniques; cash flow and financial statements; case study method.</li>
-</ul>
-</div></details></div>
+Design of post-tensioned slabs.</div>
+                </div>
+            </div>
+        </div>
 
-<div class="unit"><details>
-<summary>Unit 3.0 — Indian Economy <span class="hours">4 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Brief overview of post-independence period and plans.</li>
-<li>Post-reform growth and structure of productive activity.</li>
-<li>Issues of inclusion: sectors, states/regions, groups of people (M/F), urbanization.</li>
-<li>Employment — informal, organized, unorganized, public and private.</li>
-<li>Challenges and policy debates in monetary, fiscal, social and external sectors.</li>
-</ul>
-</div></details></div>
+        <!-- ENVIRONMENTAL ENGINEERING -->
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101502 · 4 CREDITS</div>
+                    <div class="subject-title">Environmental Engineering-I</div>
+                    <div class="subject-meta">Lecture: 3 · Tutorial: 1 · ESE: 70 · IA: 30</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
 
-<div class="unit"><details open>
-<summary>Unit 4.0 — Estimation / Measurements <span class="hours">9 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Introduction to estimation process; use of relevant Indian Standard Specifications.</li>
-<li>Taking out quantities from given requirements of work; comparison of alternatives.</li>
-<li>Bar bending schedules and mass haul diagrams.</li>
-<li>Estimating earthwork and foundations; concrete and masonry; finishes, interiors and MEP works.</li>
-<li>BIM and quantity take-offs; equipment costs; labour costs; rate analysis.</li>
-<li>Material survey: thumb rules for material requirements for buildings, percentage breakup of cost, cost-sensitive index and market survey of basic materials.</li>
-<li>Use of computers in quantity surveying.</li>
-</ul>
-</div></details></div>
+            <div class="subject-body">
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 1 · Water Supply
+                        <span class="hours">10 hrs</span>
+                    </div>
+                    <div class="unit-content">Sources of Water and quality issues, water quality requirements for different beneficial uses, water quality standards, water quality indices, water safety plans.
 
-<div class="unit"><details>
-<summary>Unit 5.0 — Specifications and Rate Analysis <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Specifications: types, requirements and importance; detailed specifications for buildings, roads, minor bridges and industrial structures.</li>
-<li>Rate analysis: purpose, importance and necessity; factors affecting it; task work; daily output from different equipment/productivity.</li>
-</ul>
-</div></details></div>
+Water Supply Systems: Need for planned water supply schemes, industrial and agricultural water requirements, components of water supply system, transmission of water, distribution system, various valves used in water supply systems, service reservoirs and design.</div>
+                </div>
 
-<div class="unit"><details>
-<summary>Unit 6.0 — Tender, Contracts and Bids <span class="hours">9 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Preparation of tender documents; importance of inviting tenders; contract types and relative merits; prequalification.</li>
-<li>General and special conditions; termination of contracts; extra work and changes; penalty and liquidated charges; settlement of disputes.</li>
-<li>R.A. Bill and Final Bill; advance payment; insurance; claims; price variation.</li>
-<li>Preparing bids and bid price buildup: material, labour, equipment costs, risks, direct and indirect overheads, profits.</li>
-<li>Bid conditions, alternative specifications, alternative bids and bid process management.</li>
-<li>Introduction to Acts pertaining to minimum wages, Workman's compensation, contracts, arbitration and easement rights.</li>
-</ul>
-</div></details></div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 2 · Water Treatment
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Aeration, sedimentation, coagulation, flocculation, filtration, disinfection and advanced treatments like adsorption, ion exchange and membrane processes.</div>
+                </div>
 
-<h3 class="subhead">Text / Reference</h3>
-<ol class="books">
-<li>Mankiw Gregory N. (2002), <i>Principles of Economics</i>, Thompson Asia.</li>
-<li>V. Mote, S. Paul, G. Gupta (2004), <i>Managerial Economics</i>, Tata McGraw Hill.</li>
-<li>Misra, S.K. and Puri (2009), <i>Indian Economy</i>, Himalaya.</li>
-<li>Pareek Saroj (2003), <i>Textbook of Business Economics</i>, Sunrise Publishers.</li>
-<li>M. Chakravarty, <i>Estimating, Costing Specifications & Valuation</i>.</li>
-<li>Joy P.K., <i>Handbook of Construction Management</i>, Macmillan.</li>
-<li>B.S. Patil, <i>Building & Engineering Contracts</i>.</li>
-<li>Relevant Indian Standard Specifications; World Bank Approved Contract Documents; FIDIC Contract Conditions.</li>
-<li>Acts related to Minimum Wages, Workmen’s Compensation, Contract and Arbitration; typical PWD Rate Analysis documents.</li>
-<li>UBS Publishers, <i>Estimating and Costing in Civil Engineering</i>, 2016; Dutta, B.N., <i>Estimating and Costing in Civil Engineering (Theory & Practice)</i>, 2016.</li>
-</ol>
-</section>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 3 · Air Pollution
+                        <span class="hours">7 hrs</span>
+                    </div>
+                    <div class="unit-content">Composition and properties of air, quantification of air pollutants, monitoring of air pollutants, occupational hazards, urban air pollution, automobile pollution and chemistry of combustion.</div>
+                </div>
 
-<section class="card subject" id="s101504">
-<div class="subject-title">
-<h2>Hydrology and Water Resources Engineering</h2>
-<span class="course-code">101504 · 3 Credits</span>
-</div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 4 · Air Quality and Control
+                        <span class="hours">7 hrs</span>
+                    </div>
+                    <div class="unit-content">Automobile engines, quality of fuel, operating conditions and interrelationship. Air quality standards, control measures for air pollution, construction and limitations.</div>
+                </div>
 
-<div class="unit"><details open>
-<summary>Unit 1.0 — Introduction and Precipitation <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Introduction: hydrologic cycle, water-budget equation, history of hydrology, world water balance, applications in engineering and sources of data.</li>
-<li>Precipitation: forms of precipitation; characteristics of precipitation in India; measurement of precipitation; rain gauge network; mean precipitation over an area.</li>
-<li>Depth-area-duration relationships; maximum intensity/depth-duration-frequency relationship; Probable Maximum Precipitation (PMP); rainfall data in India.</li>
-</ul>
-</div></details></div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 5 · Noise Pollution
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Basic concept of noise, measurement and various control methods.</div>
+                </div>
 
-<div class="unit"><details>
-<summary>Unit 2.0 — Abstractions from Precipitation <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Evaporation process, evaporimeters, analytical methods of evaporation estimation, reservoir evaporation and methods for its reduction.</li>
-<li>Evapotranspiration: measurement, equations, potential evapotranspiration over India and actual evapotranspiration.</li>
-<li>Interception, depression storage and infiltration.</li>
-<li>Infiltration capacity, measurement of infiltration, modelling infiltration capacity, classification of infiltration capacities and infiltration indices.</li>
-</ul>
-</div></details></div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 6 · Building Plumbing
+                        <span class="hours">8 hrs</span>
+                    </div>
+                    <div class="unit-content">Introduction to various types of home plumbing systems for water supply and wastewater disposal, high-rise building plumbing, pressure reducing valves, break pressure tanks, storage tanks, building drainage for high-rise buildings and various kinds of fixtures and fittings used.</div>
+                </div>
+            </div>
+        </div>
 
-<div class="unit"><details open>
-<summary>Unit 3.0 — Runoff <span class="hours">3 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Runoff volume and SCS-CN method of estimating runoff volume.</li>
-<li>Flow-duration curve and flow-mass curve.</li>
-<li>Hydrograph, factors affecting runoff hydrograph, components of hydrograph, base-flow separation, effective rainfall and unit hydrograph.</li>
-<li>Surface water resources of India and environmental flows.</li>
-</ul>
-</div></details></div>
+        <!-- ECONOMICS ESTIMATION -->
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101503 · 2 CREDITS</div>
+                    <div class="subject-title">Engineering Economics, Estimation & Costing</div>
+                    <div class="subject-meta">Lecture: 2 · ESE: 70 · IA: 30</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
 
-<div class="unit"><details>
-<summary>Unit 4.0 — Groundwater, Well Hydrology and Water Uses <span class="hours">6 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Forms of subsurface water, saturated formation, aquifer properties and geologic formations of aquifers.</li>
-<li>Well hydraulics: steady-state flow in wells; equilibrium equations for confined and unconfined aquifers; aquifer tests.</li>
-<li>Water for energy production, agriculture and hydroelectric generation; flood control; analysis of surface water supply.</li>
-<li>Water requirement of crops and crop seasons in India; cropping pattern; duty and delta; quality of irrigation water.</li>
-<li>Soil-water relationships, root-zone soil water, infiltration, consumptive use, irrigation requirement and frequency of irrigation.</li>
-<li>Methods of applying water to fields: surface, sub-surface, sprinkler and trickle/drip irrigation.</li>
-</ul>
-</div></details></div>
+            <div class="subject-body">
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 1 · Principles of Economics
+                        <span class="hours">8 hrs</span>
+                    </div>
+                    <div class="unit-content">Basic principles and methodology of economics. Demand and supply, elasticity, government policies and applications. Theory of the firm and market structure.
 
-<div class="unit"><details>
-<summary>Unit 5.0 — Distribution Systems <span class="hours">4 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Canal systems, alignment of canals, canal losses and estimation of design discharge.</li>
-<li>Design of channels: rigid boundary channels and alluvial channels.</li>
-<li>Kennedy’s and Lacey’s theory of regime channels.</li>
-<li>Canal outlets: non-modular, semi-modular and modular outlets.</li>
-<li>Water logging: causes, effects and remedial measures; lining of canals and types of lining.</li>
-<li>Drainage of irrigated lands: necessity and methods.</li>
-</ul>
-</div></details></div>
+Basic macro-economic concepts including GDP, GNP, NI and disposable income. Aggregate demand and supply (IS/LM), price indices (WPI/CPI), interest rates, direct and indirect taxes.
 
-<div class="unit"><details>
-<summary>Unit 6.0 — Dams and Spillways <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Embankment dams: classification, design considerations, estimation and control of seepage, slope protection.</li>
-<li>Gravity dams: forces on gravity dams, causes of failure, stress analysis, elementary and practical profile.</li>
-<li>Arch and buttress dams.</li>
-<li>Spillways: components of spillways and types of gates for spillway crests.</li>
-<li>Reservoirs: types, capacity, yield, regulation, sedimentation, economic height of dam and selection of suitable site.</li>
-</ul>
-</div></details></div>
+Public sector economics, welfare, externalities, labour market, monetary and financial systems, central bank, commercial banks, capital and debt markets, monetary and fiscal policy, inflation and Phillips Curve.</div>
+                </div>
 
-<h3 class="subhead">Text / Reference</h3>
-<ol class="books">
-<li>K. Subramanya, <i>Engineering Hydrology</i>, McGraw Hill.</li>
-<li>K.N. Muthreja, <i>Applied Hydrology</i>, Tata McGraw Hill.</li>
-<li>K. Subramanya, <i>Water Resources Engineering through Objective Questions</i>, Tata McGraw Hill.</li>
-<li>G.L. Asawa, <i>Irrigation Engineering</i>, Wiley Eastern.</li>
-<li>L.W. Mays, <i>Water Resources Engineering</i>, Wiley.</li>
-<li>J.D. Zimmerman, <i>Irrigation</i>, John Wiley & Sons.</li>
-<li>C.S.P. Ojha, R. Berndtsson and P. Bhunya, <i>Engineering Hydrology</i>, Oxford.</li>
-</ol>
-</section>
-<section class="card subject" id="s101505">
-<div class="subject-title">
-<h2>Professional Practice, Law & Ethics</h2>
-<span class="course-code">101505 · Audit / 0 Credits</span>
-</div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 2 · Business and Managerial Economics
+                        <span class="hours">7 hrs</span>
+                    </div>
+                    <div class="unit-content">Elements of business/managerial economics and forms of organizations.
 
-<div class="unit"><details open>
-<summary>Unit 1.0 — Professional Practice <span class="hours">8 hrs</span></summary>
-<div class="unit-body">
-<p>Respective roles of various stakeholders:</p>
-<ul>
-<li>Government: constituting regulatory bodies and standardization organizations, prescribing norms to ensure citizens' safety.</li>
-<li>Standardization bodies (e.g. BIS, IRC): formulating standards of practice.</li>
-<li>Professional bodies (e.g. Institution of Engineers (India), Indian Roads Congress, IIA/COA, ECI); local bodies/planning authorities: certifying professionals and offering platforms for interaction.</li>
-<li>Clients/owners: role governed by contracts; developers: role governed by regulations such as RERA.</li>
-<li>Consultants: role governed by bodies such as CEAI; contractors: role governed by contracts and regulatory Acts and Standards.</li>
-<li>Manufacturers, vendors and service agencies: role governed by contracts and regulatory Acts and Standards.</li>
-</ul>
-</div></details></div>
+Cost and cost control, types of costs, lifecycle costs, budgets, break-even analysis, capital budgeting, linear programming.
 
-<div class="unit"><details>
-<summary>Unit 2.0 — Professional Ethics <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Definitions of ethics, professional ethics, business ethics, corporate ethics, engineering ethics and personal ethics.</li>
-<li>Code of Ethics as defined on the Institution of Engineers (India) website.</li>
-<li>Profession, professionalism, professional responsibility and professional ethics.</li>
-<li>Conflict of interest; gift vs bribery; environmental breaches; negligence; deficiencies in state-of-the-art.</li>
-<li>Vigil mechanism, whistleblowing and protected disclosures.</li>
-</ul>
-</div></details></div>
+Investment analysis: NPV, ROI, IRR, payback period, depreciation and time value of money.
 
-<div class="unit"><details>
-<summary>Unit 3.0 — General Principles of Contracts Management <span class="hours">9 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Indian Contract Act, 1972 and amendments; general principles of contracting; contract formation and law; privity of contract.</li>
-<li>Types of contract and features; valid and voidable contracts; prime and sub-contracts; joint ventures and consortium.</li>
-<li>Contract terminology; tenders, requests for proposals, bids and proposals; bid evaluation; contract conditions and specifications; critical/red-flag conditions.</li>
-<li>Contract award and Notice to Proceed; variations and changes; differing site conditions; cost escalation; delays, suspensions and terminations; time extensions and force majeure; delay analysis.</li>
-<li>Liquidated damages and penalties; insurance and taxation; performance and excusable non-performance; contract documentation and notices.</li>
-<li>Wrong practices in contracting (bid shopping, bid fixing, cartels); reverse auction; case studies; Build-Own-Operate and variations; Public-Private Partnerships; International Commercial Terms.</li>
-</ul>
-</div></details></div>
+Business forecasting, cash flow and financial statements, case study method.</div>
+                </div>
 
-<div class="unit"><details>
-<summary>Unit 4.0 — Arbitration, Conciliation and ADR <span class="hours">7 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Arbitration: meaning, scope and types; distinction between laws of 1940 and 1996; UNCITRAL model law; arbitration and expert determination; extent of judicial intervention; international commercial arbitration.</li>
-<li>Arbitration agreements: essentials, kinds, validity, reference and interim measures by court.</li>
-<li>Arbitral tribunal: appointment, challenge, jurisdiction, powers, grounds of challenge, procedure and court assistance.</li>
-<li>Award: form and content, grounds for setting aside, enforcement, appeal and revision; enforcement of foreign awards — New York and Geneva Convention Awards.</li>
-<li>Distinction between conciliation, negotiation, mediation and arbitration; confidentiality, judicial proceedings, costs; Dispute Resolution Boards and Lok Adalats.</li>
-</ul>
-</div></details></div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 3 · Indian Economy
+                        <span class="hours">4 hrs</span>
+                    </div>
+                    <div class="unit-content">Indian economy: Brief overview of post-independence period and plans, post-reform growth, structure of productive activity.
 
-<div class="unit"><details>
-<summary>Unit 5.0 — Labour and Construction-related Laws <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Role of labour in Civil Engineering; methods of engaging labour — on rolls, labour sub-contract and piece-rate work.</li>
-<li>Industrial Disputes Act, 1947; collective bargaining; Industrial Employment (Standing Orders) Act, 1946; Workmen’s Compensation Act, 1923.</li>
-<li>Building & Other Construction Workers (Regulation of Employment and Conditions of Service) Act (1996) and Rules (1998); RERA Act 2017; NBC 2017.</li>
-</ul>
-</div></details></div>
+Issues of inclusion across sectors, states/regions and groups of people, urbanization.
 
-<div class="unit"><details>
-<summary>Unit 6.0 — Law Relating to Intellectual Property <span class="hours">8 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Introduction and meaning of intellectual property; main forms of IP: copyright, trademarks, patents, designs and secrets.</li>
-<li>Copyright law in India: historical evolution of Copyright Act, 1957; meaning of copyright including computer programs; ownership and assignment; infringement criteria; internet piracy, remedies and procedures in India.</li>
-<li>Patents Act, 1970: concept and historical perspective of patent law in India; patentable inventions with special reference to biotechnology products; patent protection for computer programs.</li>
-<li>Process of obtaining patent: application, examination, opposition and sealing; Patent Cooperation Treaty and grounds for opposition; rights and obligations of patentee; duration of patents; infringement and related remedies.</li>
-</ul>
-</div></details></div>
+Employment: Informal, organized, unorganized, public and private sectors.
 
-<h3 class="subhead">Text / Reference</h3>
-<ol class="books">
-<li>B.S. Patil, <i>Legal Aspects of Building and Engineering Contracts</i>, 1974.</li>
-<li>The National Building Code, BIS, 2017; RERA Act, 2017.</li>
-<li>Meena Rao (2006), <i>Fundamental Concepts in Law of Contract</i>, 3rd edition.</li>
-<li>Neelima Chandiramani (2000), <i>The Law of Contract: An Outline</i>, 2nd edition.</li>
-<li>Avtarsingh (2002), <i>Law of Contract</i>, Eastern Book Co.; Dutt (1994), <i>Indian Contract Act</i>.</li>
-<li>Anson W.R. (1979), <i>Law of Contract</i>, Oxford University Press.</li>
-<li>Kwatra G.K. (2005), <i>The Arbitration & Conciliation of Law in India</i>.</li>
-<li>Wadhera (2004), <i>Intellectual Property Rights</i>; T. Ramappa (2010), <i>Intellectual Property Rights Law in India</i>.</li>
-<li><i>Right to Information Act</i> (2005); O.P. Malhotra, <i>Law of Industrial Disputes</i>.</li>
-<li>K.M. Desai, <i>The Industrial Employment (Standing Orders) Act</i>; Rustamji R.F., <i>Introduction to the Law of Industrial Disputes</i>.</li>
-<li>Vee, Charles & Skitmore (2003), “Professional Ethics in the Construction Industry”.</li>
-<li>ASCE (2011), <i>ASCE Code of Ethics — Principles, Study and Application</i>; M.W. Martin & R. Schinzinger, <i>Ethics in Engineering</i>; <i>Engineering Ethics</i>, National Institute for Engineering Ethics, USA.</li>
-</ol>
-</section>
+Challenges and policy debates in monetary, fiscal, social and external sectors.</div>
+                </div>
 
-<section class="card subject" id="s101506">
-<div class="subject-title">
-<h2>Disability, Accessibility and Universal Design</h2>
-<span class="course-code">101506 · Audit / 0 Credits</span>
-</div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 4 · Estimation and Measurements
+                        <span class="hours">9 hrs</span>
+                    </div>
+                    <div class="unit-content">Introduction to estimation, relevant Indian Standard Specifications, taking out quantities from work requirements, comparison of alternatives, bar bending schedules and mass haul diagrams.
 
-<div class="unit"><details open>
-<summary>Unit 1.0 — Human Diversity and Inclusion <span class="hours">6 hrs</span></summary>
-<div class="unit-body">
-<p>An introductory perspective: understanding concepts of diversity (including vulnerable groups), inclusion, need and significance, and impacts.</p>
-</div></details></div>
+Estimating earthwork, foundations, concrete, masonry, finishes, interiors and MEP works.
 
-<div class="unit"><details>
-<summary>Unit 2.0 — Understanding Disability <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<p>Definitions, models and prevalence theory of disability; various concepts and models; prevalence.</p>
-</div></details></div>
+BIM and quantity take-offs, equipment costs, labour costs, rate analysis, material survey, thumb rules for material requirements, percentage breakup of cost, cost sensitive index, market survey and use of computers in quantity surveying.</div>
+                </div>
 
-<div class="unit"><details>
-<summary>Unit 3.0 — Disability Types and Environmental Needs <span class="hours">9 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Disability classification, functional limitations and key coping strategies in the environment, for example physical and movement disabilities, and vision impairments.</li>
-<li>Hearing, speech, cognitive, learning and other disabilities as per the RPWD Act 2016.</li>
-</ul>
-</div></details></div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 5 · Specifications and Rate Analysis
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Specifications: Types, requirements and importance, detailed specifications for buildings, roads, minor bridges and industrial structures.
 
-<div class="unit"><details>
-<summary>Unit 4.0 — Environmental Barriers, Codes and Policies <span class="hours">9 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Introduction to and classification of physical, social and institutional barriers in diverse national and international contexts.</li>
-<li>Introduction to Harmonized Guidelines, NBC and other exemplary international codes and guidelines; basics of accessibility codes and their review.</li>
-<li>Legislative policies and programs: UNCRPD, RPWD Act, 2016, SDGs and urban development programs in Indian context; other international and national policies.</li>
-</ul>
-</div></details></div>
+Rate analysis: Purpose, importance, necessity, factors affecting rate analysis, task work and daily output/productivity from different equipment.</div>
+                </div>
 
-<div class="unit"><details>
-<summary>Unit 5.0 — Universal Design Theory I & II <span class="hours">8 hrs</span></summary>
-<div class="unit-body">
-<ul>
-<li>Evolution from Barrier Free Environment to Universal Design.</li>
-<li>Definitions, associated myths and concepts, terminologies and perspectives.</li>
-<li>Universal Design principles (international, Indian, UD goals) and their criteria.</li>
-</ul>
-</div></details></div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 6 · Tender and Bidding
+                        <span class="hours">9 hrs</span>
+                    </div>
+                    <div class="unit-content">Preparation of tender documents, importance of inviting tenders, contract types and relative merits, prequalification, general and special conditions, termination of contracts, extra work and changes, penalty and liquidated charges, settlement of disputes, R.A. Bill and Final Bill, advance payment, insurance, claims and price variation.
 
-<div class="unit"><details>
-<summary>Unit 6.0 — Universal Design Case Studies <span class="hours">5 hrs</span></summary>
-<div class="unit-body">
-<p>Built environment case studies from urban transportation and other contexts like peri-urban and rural settings.</p>
-</div></details></div>
+Preparing bids: Bid price build-up including material, labour, equipment costs, risks, direct and indirect overheads and profits. Bid conditions, alternative specifications, alternative bids and bid process management.
 
-<h3 class="subhead">Text / Reference</h3>
-<ol class="books">
-<li>Null, R. (2013), <i>Universal Design: Principles and Models</i>, CRC Press.</li>
-<li>Guffey, E. (Ed.) (2023), <i>After Universal Design: The Disability Design Revolution</i>, Bloomsbury Publishing.</li>
-<li>Lund, B. (2020), <i>Creating Accessible Online Instruction Using Universal Design Principles</i>, Bloomsbury Publishing.</li>
-<li>Burgstahler, S. (2020), <i>Creating Inclusive Learning Opportunities in Higher Education: A Universal Design Toolkit</i>, Harvard University Press.</li>
-<li>Cameron, C. (Ed.) (2013), <i>Disability Studies: A Student's Guide</i>, SAGE Publications.</li>
-</ol>
-</section>
+Introduction to Acts pertaining to minimum wages, workmen's compensation, contracts, arbitration and easement rights.</div>
+                </div>
+            </div>
+        </div>
 
-<section class="card subject" id="sopen">
-<div class="subject-title">
-<h2>Open Elective Course-I</h2>
-<span class="course-code">1015XX · 3 Credits</span>
-</div>
-<p class="notice">The uploaded syllabus PDF lists this course in the semester scheme but does not provide the elective title or unit-wise syllabus. Refer to the department's elective allocation.</p>
-</section>
+        <!-- HYDROLOGY -->
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101504 · 3 CREDITS</div>
+                    <div class="subject-title">Hydrology and Water Resources Engineering</div>
+                    <div class="subject-meta">Lecture: 3 · ESE: 70 · IA: 30</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
 
-<section class="card subject" id="sprogram">
-<div class="subject-title">
-<h2>Program Elective-I</h2>
-<span class="course-code">1015XX · 3 Credits</span>
-</div>
-<p class="notice">The uploaded syllabus PDF lists this course in the semester scheme but does not provide the elective title or unit-wise syllabus. Refer to the department's elective allocation.</p>
-</section>
+            <div class="subject-body">
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 1 · Introduction and Precipitation
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Hydrologic cycle, water-budget equation, history of hydrology, world water balance, applications in engineering and sources of data.
 
-<section class="card subject" id="l101501">
-<div class="subject-title">
-<h2>Structural Design-I Lab</h2>
-<span class="course-code">101501P · 1 Credit</span>
-</div>
-<p class="subhead">Perform all experiments</p>
-<ol class="lab-list">
-<li>Design and drawing of singly reinforced, doubly reinforced rectangular and T-section simply supported and continuous beam.</li>
-<li>Design and drawing of one-way, two-way simply supported and continuous slab system.</li>
-<li>Design and drawing of dog-legged and open-well type staircases.</li>
-<li>Design and drawing of columns and foundation.</li>
-<li>Design and drawing of retaining wall (cantilever and counterfort).</li>
-</ol>
-</section>
+Precipitation: Forms of precipitation, characteristics of precipitation in India, measurement of precipitation, rain gauge network, mean precipitation over an area, depth-area-duration relationships, maximum intensity/depth-duration-frequency relationship, Probable Maximum Precipitation (PMP) and rainfall data in India.</div>
+                </div>
 
-<section class="card subject" id="l101502">
-<div class="subject-title">
-<h2>Environmental Engineering-I Lab</h2>
-<span class="course-code">101502P · 1 Credit</span>
-</div>
-<p class="subhead">Perform all experiments</p>
-<ol class="lab-list">
-<li>Physical characterization of water: turbidity, electrical conductivity, pH.</li>
-<li>Analysis of solids content of water: dissolved, settleable, suspended, total, volatile, inorganic, etc.</li>
-<li>Alkalinity and acidity; hardness: total hardness, calcium and magnesium hardness.</li>
-<li>Analysis of ions: copper, chloride and sulfate.</li>
-<li>Optimum coagulant dose.</li>
-</ol>
-</section>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 2 · Abstractions from Precipitation
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Evaporation process, evaporimeters, analytical methods of evaporation estimation, reservoir evaporation and methods for its reduction.
 
-<section class="card subject" id="l101503">
-<div class="subject-title">
-<h2>Engineering Economics, Estimation & Costing Lab</h2>
-<span class="course-code">101503P · 1 Credit</span>
-</div>
-<p class="subhead">Perform all experiments</p>
-<ol class="lab-list">
-<li>Deriving an approximate estimate for a multistoried building by approximate methods.</li>
-<li>Detailed estimate for the following with the required material survey: (a) Ground plus three storied RCC framed structure building with blockwork walls; (b) bridge with minimum 2 spans; (c) factory building; (d) road work; (e) cross drainage work; (f) ground plus three storied building with load-bearing walls; (g) cost of finishes and MEP works for (f) above.</li>
-<li>Preparation of valuation report in standard Government form.</li>
-<li>Assignments on rate analysis, specifications and simple estimates.</li>
-<li>Detailed estimate of minor structure.</li>
-<li>Preparation of bar bending schedule.</li>
-</ol>
-</section>
+Evapotranspiration, measurement of evapotranspiration, evapotranspiration equations, potential and actual evapotranspiration.
 
-<section class="card subject" id="l101504">
-<div class="subject-title">
-<h2>Hydrology and Water Resources Engineering Lab</h2>
-<span class="course-code">101504P · 1 Credit</span>
-</div>
-<p class="subhead">Perform all experiments</p>
-<ol class="lab-list">
-<li>Introduction to Darcy’s law.</li>
-<li>Determination of hydraulic conductivity.</li>
-<li>Steady flow into a well in unconfined aquifer.</li>
-<li>Steady flow into a well in confined aquifer.</li>
-<li>Measurement of infiltration using double ring infiltrometer.</li>
-<li>Rainfall measurement using rain gauge.</li>
-<li>Evaporation measurement using evaporimeter.</li>
-<li>Analysis of rainfall data.</li>
-<li>Analysis of evaporation data.</li>
-</ol>
-</section>
+Interception, depression storage, infiltration, infiltration capacity, measurement of infiltration, modelling infiltration capacity, classification of infiltration capacities and infiltration indices.</div>
+                </div>
 
-<section class="card subject" id="internship">
-<div class="subject-title">
-<h2>Internship-II</h2>
-<span class="course-code">104506 · 4 Weeks · 4 Credits</span>
-</div>
-<p>Internship-II is of a minimum duration of four weeks which can be completed in an Industry/Institute in consultation with the concerned Engineering College/Institute.</p>
-<p>After completion of internship, a detailed report of the internship mentioning the training undertaken along with certificate should be submitted.</p>
-</section>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 3 · Runoff
+                        <span class="hours">3 hrs</span>
+                    </div>
+                    <div class="unit-content">Runoff volume, SCS-CN method of estimating runoff volume, flow-duration curve, flow-mass curve, hydrograph, factors affecting runoff hydrograph, components of hydrograph, base flow separation, effective rainfall, unit hydrograph, surface water resources of India and environmental flows.</div>
+                </div>
 
-</div>
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 4 · Groundwater and Irrigation
+                        <span class="hours">6 hrs</span>
+                    </div>
+                    <div class="unit-content">Forms of subsurface water, saturated formation, aquifer properties, geological formations of aquifers, well hydraulics, steady state flow in wells, equilibrium equations for confined and unconfined aquifers and aquifer tests.
 
-<footer class="footer">
-<strong>BEU CONNECT</strong><br>
-LEARN · GROW · SUCCEED<br>
-Academic syllabus interface · Civil Engineering · Semester V
+Water withdrawals and uses, energy production, agriculture, hydroelectric generation and flood control.
+
+Analysis of surface water supply, water requirement of crops, crop seasons in India, cropping pattern, duty and delta, quality of irrigation water, soil-water relationships, root zone soil water, consumptive use, irrigation requirement and frequency of irrigation.
+
+Methods of applying water: Surface, subsurface, sprinkler and trickle/drip irrigation.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 5 · Distribution Systems and Canals
+                        <span class="hours">4 hrs</span>
+                    </div>
+                    <div class="unit-content">Canal systems, alignment of canals, canal losses and estimation of design discharge.
+
+Design of channels: Rigid boundary channels, alluvial channels, Kennedy's and Lacey's theory of regime channels.
+
+Canal outlets: Non-modular, semi-modular and modular outlets.
+
+Water logging: Causes, effects and remedial measures. Lining of canals, types of lining and drainage of irrigated lands.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 6 · Dams and Spillways
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Embankment dams: Classification, design considerations, estimation and control of seepage, slope protection.
+
+Gravity dams: Forces on gravity dams, causes of failure, stress analysis, elementary and practical profile.
+
+Arch and buttress dams. Spillways: Components of spillways and types of gates for spillway crests.
+
+Reservoirs: Types, capacity, yield, regulation, sedimentation, economic height of dam and selection of suitable site.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROFESSIONAL PRACTICE -->
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101505 · NON-CREDIT</div>
+                    <div class="subject-title">Professional Practice, Law & Ethics</div>
+                    <div class="subject-meta">Lecture: 3 · Non-credit course</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
+
+            <div class="subject-body">
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 1 · Professional Practice
+                        <span class="hours">8 hrs</span>
+                    </div>
+                    <div class="unit-content">Roles of various stakeholders: Government, standardization bodies such as BIS and IRC, professional bodies, clients/owners, developers, consultants, contractors, manufacturers, vendors and service agencies.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 2 · Professional Ethics
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Definition of ethics, professional ethics, business ethics, corporate ethics, engineering ethics and personal ethics.
+
+Code of Ethics of Institution of Engineers (India), professionalism, professional responsibility, conflict of interest, gift vs bribery, environmental breaches, negligence, vigil mechanism, whistleblowing and protected disclosures.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 3 · Contracts Management
+                        <span class="hours">9 hrs</span>
+                    </div>
+                    <div class="unit-content">Indian Contract Act, 1972 and amendments, contract formation and law, types of contracts, valid and voidable contracts, prime and sub-contracts, joint ventures and consortium.
+
+Tenders, RFPs, bids and proposals, bid evaluation, contract conditions, contract award, variations and changes, cost escalation, delays, suspensions and terminations, force majeure, delay analysis, liquidated damages, insurance, taxation, contract documentation, wrong practices in contracting, PPP and international commercial terms.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 4 · Arbitration and ADR
+                        <span class="hours">7 hrs</span>
+                    </div>
+                    <div class="unit-content">Arbitration, conciliation and Alternative Dispute Resolution system, arbitration laws of 1940 and 1996, UNCITRAL model law, arbitration agreements, arbitration tribunal, appointment, jurisdiction, powers and procedure.
+
+Awards, enforcement, appeal, revision, foreign awards, New York and Geneva Convention Awards, distinction between conciliation, negotiation, mediation and arbitration, Dispute Resolution Boards and Lok Adalats.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 5 · Labour and Construction Laws
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Role of labour in Civil Engineering, methods of engaging labour, Industrial Disputes Act, 1947, collective bargaining, Industrial Employment (Standing Orders) Act, 1946, Workmen's Compensation Act, 1923, Building and Other Construction Workers Act, 1996 and Rules, 1998, RERA Act 2017 and NBC 2017.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 6 · Intellectual Property Rights
+                        <span class="hours">8 hrs</span>
+                    </div>
+                    <div class="unit-content">Meaning of intellectual property and its main forms: Copyright, trademarks, patents, designs and secrets.
+
+Copyright law in India, Copyright Act 1957, ownership and assignment, infringement, internet piracy and remedies.
+
+Patents Act 1970, patentable inventions, process of obtaining patents, application, examination, opposition, rights and obligations of patentee, duration of patents and infringement remedies.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIVERSAL DESIGN -->
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101506 · NON-CREDIT</div>
+                    <div class="subject-title">Disability, Accessibility and Universal Design</div>
+                    <div class="subject-meta">Lecture: 3 · Non-credit course</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
+
+            <div class="subject-body">
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 1 · Human Diversity and Inclusion
+                        <span class="hours">6 hrs</span>
+                    </div>
+                    <div class="unit-content">Understanding concepts of diversity, including vulnerable groups, inclusion, need and significance, and impacts.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 2 · Understanding Disability
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Definitions, models and prevalence theory of disability, various concepts and models, and prevalence.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 3 · Disability Types and Environmental Needs
+                        <span class="hours">9 hrs</span>
+                    </div>
+                    <div class="unit-content">Disability classification, functional limitations and key coping strategies in the environment.
+
+Physical and movement disabilities, vision impairments, hearing, speech, cognitive, learning and other disabilities as per the RPWD Act 2016.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 4 · Environmental Barriers
+                        <span class="hours">9 hrs</span>
+                    </div>
+                    <div class="unit-content">Physical, social and institutional barriers in national and international contexts.
+
+Harmonized Guidelines, NBC, international codes and guidelines, accessibility codes and their review.
+
+Legislative policies and programs: UNCRPD, RPWD Act 2016, SDGs and urban development programs in India and other countries.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 5 · Universal Design Theory
+                        <span class="hours">8 hrs</span>
+                    </div>
+                    <div class="unit-content">Evolution from Barrier Free Environment to Universal Design, definitions, associated myths, concepts, terminologies and perspectives.
+
+Universal Design Principles: International and Indian principles, UD goals and their criteria.</div>
+                </div>
+
+                <div class="unit">
+                    <div class="unit-head" onclick="toggleUnit(this)">
+                        Unit 6 · Universal Design Case Studies
+                        <span class="hours">5 hrs</span>
+                    </div>
+                    <div class="unit-content">Built Environment Case Studies from Urban Transportation and other contexts like peri-urban and rural settings.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="section-heading">Practical / Laboratory Subjects</h2>
+
+    <div class="subject-list">
+
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101501P · 1 CREDIT</div>
+                    <div class="subject-title">Structural Design-I Lab</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
+            <div class="subject-body">
+                <ol class="lab-list">
+                    <li>Design and drawing of singly reinforced, doubly reinforced rectangular and T-section simply supported and continuous beam.</li>
+                    <li>Design and drawing of one-way, two-way simply supported and continuous slab system.</li>
+                    <li>Design and drawing of dog-legged and open-well type staircases.</li>
+                    <li>Design and drawing of columns and foundation.</li>
+                    <li>Design and drawing of retaining wall (cantilever and counterfort).</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101502P · 1 CREDIT</div>
+                    <div class="subject-title">Environmental Engineering-I Lab</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
+            <div class="subject-body">
+                <ol class="lab-list">
+                    <li>Physical characterization of water: Turbidity, Electrical Conductivity and pH.</li>
+                    <li>Analysis of solids content of water: Dissolved, settleable, suspended, total, volatile and inorganic solids.</li>
+                    <li>Alkalinity and acidity, hardness: Total, calcium and magnesium hardness.</li>
+                    <li>Analysis of ions: Copper, chloride and sulfate.</li>
+                    <li>Optimum coagulant dose.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101503P · 1 CREDIT</div>
+                    <div class="subject-title">Engineering Economics, Estimation & Costing Lab</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
+            <div class="subject-body">
+                <ol class="lab-list">
+                    <li>Deriving an approximate estimate for a multistoried building by approximate methods.</li>
+                    <li>Detailed estimate with material survey for:
+                        <ul>
+                            <li>Ground plus three storied RCC framed structure building with blockwork walls.</li>
+                            <li>Bridge with minimum 2 spans.</li>
+                            <li>Factory building.</li>
+                            <li>Road work.</li>
+                            <li>Cross drainage work.</li>
+                            <li>Ground plus three storied building with load-bearing walls.</li>
+                            <li>Cost of finishes and MEP works.</li>
+                        </ul>
+                    </li>
+                    <li>Preparation of valuation report in standard Government form.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">101504P · 1 CREDIT</div>
+                    <div class="subject-title">Hydrology and Water Resources Engineering Lab</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
+            <div class="subject-body">
+                <ol class="lab-list">
+                    <li>Introduction to Darcy's law.</li>
+                    <li>Determination of hydraulic conductivity.</li>
+                    <li>Steady flow into a well in unconfined aquifer.</li>
+                    <li>Steady flow into a well in confined aquifer.</li>
+                    <li>Measurement of infiltration using double ring infiltrometer.</li>
+                    <li>Rainfall measurement using rain gauge.</li>
+                    <li>Evaporation measurement using evaporimeter.</li>
+                    <li>Analysis of rainfall data.</li>
+                    <li>Analysis of evaporation data.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="subject">
+            <div class="subject-head" onclick="toggleSubject(this)">
+                <div>
+                    <div class="subject-code">INTERNSHIP-II · 4 CREDITS</div>
+                    <div class="subject-title">Internship-II</div>
+                    <div class="subject-meta">Minimum duration: 4 weeks</div>
+                </div>
+                <span class="arrow">⌄</span>
+            </div>
+            <div class="subject-body">
+                <p class="unit-content" style="display:block;padding:12px 0;">
+                    Internship-II is of a minimum duration of four weeks which can be completed in an Industry/Institute in consultation with the concerned Engineering College/Institute. After completion of internship, a detailed report mentioning the training undertaken along with certificate should be submitted.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="section-heading">Elective Subjects</h2>
+
+    <div class="subject-list">
+        <div class="subject">
+            <div class="subject-head">
+                <div>
+                    <div class="subject-code">1015XX · 3 CREDITS</div>
+                    <div class="subject-title">Open Elective Course-I</div>
+                    <div class="subject-meta">Subject details to be updated as per college selection.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subject">
+            <div class="subject-head">
+                <div>
+                    <div class="subject-code">1015XX · 3 CREDITS</div>
+                    <div class="subject-title">Program Elective-I</div>
+                    <div class="subject-meta">Subject details to be updated as per college selection.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <strong>BEU CONNECT</strong><br>
+    LEARN · GROW · SUCCEED<br>
+    Academic resources for BEU students
 </footer>
-</div>
 
 <script>
-const tabs=[...document.querySelectorAll('.tab')];
-const subjects=[...document.querySelectorAll('.subject')];
-
-function showSubject(id){
-subjects.forEach(s=>s.classList.toggle('active',s.id===id));
-tabs.forEach(t=>t.classList.toggle('active',t.dataset.subject===id));
-
-const target=document.getElementById(id);
-if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+function toggleSubject(element) {
+    const subject = element.closest(".subject");
+    subject.classList.toggle("open");
 }
 
-tabs.forEach(tab=>tab.addEventListener('click',()=>showSubject(tab.dataset.subject)));
+function toggleUnit(element) {
+    const unit = element.closest(".unit");
+    unit.classList.toggle("active");
+}
 
-const toggle=document.getElementById('credits-toggle');
-const content=document.getElementById('credits-content');
+function searchSubjects() {
+    const query = document.getElementById("searchInput")
+        .value.toLowerCase().trim();
 
-toggle.addEventListener('click',()=>{
-content.hidden=!content.hidden;
-document.getElementById('credits-card').classList.toggle('collapsed',content.hidden);
-});
+    document.querySelectorAll(".subject").forEach(subject => {
+        const content = subject.innerText.toLowerCase();
+        subject.style.display = content.includes(query) ? "" : "none";
+
+        if (query && content.includes(query)) {
+            subject.classList.add("open");
+        }
+    });
+}
 </script>
 
 </body>
