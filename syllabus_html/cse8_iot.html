@@ -1,31 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1,width=device-width,height=device-height,viewport-fit=cover,user-scalable=no">
-<title>BEU Connect - CSE (IoT) 8th Semester Syllabus</title>
-<style>
-*{box-sizing:border-box} body{margin:0;background:#f7f8fb;color:#202938;font-family:Arial,Helvetica,sans-serif}
-.app{min-height:100vh} .topbar{height:64px;background:#fff;border-bottom:1px solid #e6e8ed;display:flex;align-items:center;justify-content:space-between;padding:0 18px;position:sticky;top:0;z-index:10}
-.brand{display:flex;align-items:center;gap:10px} .brand-logo{width:38px;height:38px;border-radius:9px;overflow:hidden;background:#eef1f5;display:flex;align-items:center;justify-content:center} .brand-logo img{width:100%;height:100%;object-fit:cover}
-.brand-name{font-size:20px;font-weight:700} .menu-btn{width:42px;height:42px;border:0;background:transparent;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:9px;cursor:pointer} .menu-btn span{height:2px;background:#273142;border-radius:2px;width:100%}
-.copyright-text{font-size:12px;color:#8b93a1;text-align:center;margin:8px 0 0}
-.content{max-width:1100px;margin:0 auto;padding:24px 16px 50px} .page-header{margin-bottom:18px} .page-title{font-size:30px;margin:0 0 6px} .page-subtitle{margin:0;color:#737c8c;font-size:16px}
-.info-card{background:#fff;border:1px solid #e5e8ee;border-radius:16px;margin:14px 0;padding:18px;box-shadow:0 3px 14px rgba(20,30,50,.04)}
-.info-card h2{margin:0 0 14px;font-size:22px} .sub-heading{font-size:18px;margin:0 0 12px} .theory-heading{color:#233a78} .lab-heading{color:#176b4d}
-#credits-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between} .chevron-icon{transition:.2s} #credits-table-container{overflow:auto}
-table{width:100%;border-collapse:collapse;min-width:620px} th,td{padding:11px 10px;border-bottom:1px solid #edf0f4;text-align:center;font-size:14px} th:first-child,td:first-child{text-align:left} th{background:#f8f9fb;font-weight:700} .total-row td{border-bottom:0;font-weight:700}
-.syllabus-tabs{display:flex;flex-wrap:wrap;gap:9px} .tab-btn{border:1px solid #dfe4eb;background:#fff;border-radius:10px;padding:10px 13px;color:#334052;font-weight:600;cursor:pointer;font-size:13px} .tab-btn.active{background:#233a78;color:#fff;border-color:#233a78}
-.lab-heading + .syllabus-tabs .tab-btn.active{background:#176b4d;border-color:#176b4d}
-.subject-card{display:none} .subject-card.active{display:block} .subject-card ul{padding-left:20px} .subject-card>ul>li{margin-bottom:14px} .unit-title{display:block;margin-bottom:7px;font-size:15px} .unit-topics{margin:0;padding-left:20px} .unit-topics li{margin:6px 0;line-height:1.45;color:#4a5565;font-size:14px}
-@media(max-width:650px){.content{padding:18px 11px 40px}.page-title{font-size:25px}.info-card{padding:14px;border-radius:13px}.brand-name{font-size:18px}}
-</style>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover, user-scalable=no">
+    <title>8th Semester Syllabus – CSE (IoT)</title>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ubuntu-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="syllabus.css">
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .modal-content {
+            background: #080012;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color, #006775a3)
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1)
+        }
+
+        #modal-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--heading-color, #ffffff);
+            font-weight: 600
+        }
+
+        #modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .modal-option-btn {
+            background-color: #001d44;
+            border: 1px solid var(--border-color, #006775a3);
+            color: var(--text-color, #ffffff);
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: left;
+            width: 100%;
+            font-family: inherit
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0
+        }
+
+        .modal-close-btn:hover {
+            color: #333
+        }
+    </style>
 </head>
 <body>
 <div class="app" role="application" aria-label="BEU Connect - CSE (IoT) Syllabus">
-<header class="topbar">
-<div class="brand"><div class="brand-logo"><img src="img/beuconnect.jpg" alt="App logo"></div><div class="brand-name">BEU Connect</div></div>
-<button id="menu-toggle" class="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+<header class="topbar" aria-label="Top bar">
+<div class="brand"><div class="brand-logo"><img src="img/beuconnect.jpg" alt="App logo"></div><div class="brand-name">Beu connect</div></div>
+<button id="menu-toggle" class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar"><span></span><span></span><span></span></button>
 </header>
 <p class="copyright-text">&copy; 2026 Beu Connect. All rights reserved</p>
 <main class="content">
@@ -46,14 +118,29 @@ table{width:100%;border-collapse:collapse;min-width:620px} th,td{padding:11px 10
 </table></div>
 </section>
 <section class="info-card" id="filter-controls">
-<h3 class="sub-heading theory-heading">Core Subject</h3>
-<div class="syllabus-tabs"><button class="tab-btn" data-target="subject-155801" data-type="theory">Cloud Computing</button></div>
+<h3 class="sub-heading theory-heading" style="margin-top:0">Core Subject</h3>
+<div class="syllabus-tabs">
+<button class="tab-btn" data-target="subject-155801" data-type="theory">Cloud Computing</button>
+</div>
 <h3 class="sub-heading lab-heading" style="margin-top:20px">Open Elective - II</h3>
-<div class="syllabus-tabs"><button class="tab-btn" data-target="subject-100850" data-type="theory">Entrepreneurship &amp; Project Management</button><button class="tab-btn" data-target="subject-100851" data-type="theory">Principles of Management</button><button class="tab-btn" data-target="subject-100852" data-type="theory">Electronic Circuits</button><button class="tab-btn" data-target="subject-100853" data-type="theory">Embedded Systems</button></div>
+<div class="syllabus-tabs">
+<button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Open Elective - II"
+data-modal-options='[{"label":"Entrepreneurship & Project Management","target":"subject-100850","btn-id":"btn-100850"},{"label":"Principles of Management","target":"subject-100851","btn-id":"btn-100851"},{"label":"Electronic Circuits","target":"subject-100852","btn-id":"btn-100852"},{"label":"Embedded Systems","target":"subject-100853","btn-id":"btn-100853"}]'>Open Elective - II</button>
+</div>
 <h3 class="sub-heading theory-heading" style="margin-top:20px">Program Elective - V</h3>
-<div class="syllabus-tabs"><button class="tab-btn" data-target="subject-155802" data-type="theory">5G Enabled IoT Systems</button><button class="tab-btn" data-target="subject-155803" data-type="theory">Mining Massive Datasets</button><button class="tab-btn" data-target="subject-155804" data-type="theory">IoT Automation</button><button class="tab-btn" data-target="subject-155805" data-type="theory">Fog Computing</button></div>
+<div class="syllabus-tabs">
+<button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Program Elective - V"
+data-modal-options='[{"label":"5G Enabled IoT Systems","target":"subject-155802","btn-id":"btn-155802"},{"label":"Mining Massive Datasets","target":"subject-155803","btn-id":"btn-155803"},{"label":"IoT Automation","target":"subject-155804","btn-id":"btn-155804"},{"label":"Fog Computing","target":"subject-155805","btn-id":"btn-155805"}]'>Program Elective - V</button>
+</div>
 <h3 class="sub-heading lab-heading" style="margin-top:20px">Program Elective - VI</h3>
-<div class="syllabus-tabs"><button class="tab-btn" data-target="subject-155806" data-type="theory">Smart Sensor Technologies</button><button class="tab-btn" data-target="subject-155807" data-type="theory">Quantum Computing</button><button class="tab-btn" data-target="subject-155808" data-type="theory">High Performance &amp; Distributed Computing</button><button class="tab-btn" data-target="subject-155809" data-type="theory">Data Warehousing &amp; Data Mining</button></div>
+<div class="syllabus-tabs">
+<button class="tab-btn" data-modal-trigger="elective-modal" data-type="theory" data-modal-title="Program Elective - VI"
+data-modal-options='[{"label":"Smart Sensor Technologies","target":"subject-155806","btn-id":"btn-155806"},{"label":"Quantum Computing","target":"subject-155807","btn-id":"btn-155807"},{"label":"High Performance & Distributed Computing","target":"subject-155808","btn-id":"btn-155808"},{"label":"Data Warehousing and Data Mining","target":"subject-155809","btn-id":"btn-155809"}]'>Program Elective - VI</button>
+</div>
+<h3 class="sub-heading lab-heading" style="margin-top:20px">Project / Lab</h3>
+<div class="syllabus-tabs">
+<button class="tab-btn" data-target="subject-100801P" data-type="lab">Project-II</button>
+</div>
 </section>
 <div id="syllabus-content">
 
@@ -122,27 +209,23 @@ table{width:100%;border-collapse:collapse;min-width:620px} th,td{padding:11px 10
 <ul><li><strong class="unit-title">Unit- 1.0: Introduction to Data Warehousing (6 hrs)</strong><ul class="unit-topics"><li>1.1 Data warehouse; differences between OLTP and OLAP; multidimensional data model</li><li>1.2 Star, snowflake and fact constellation schema; measures and concept hierarchies</li></ul></li><li><strong class="unit-title">Unit- 2.0: Data Warehouse Architecture and OLAP (7 hrs)</strong><ul class="unit-topics"><li>2.1 OLAP operations in multidimensional data model; three-tier architecture</li><li>2.2 Types of OLAP servers; data warehouse implementation and models</li></ul></li><li><strong class="unit-title">Unit- 3.0: Introduction to Data Mining &amp; Preprocessing (8 hrs)</strong><ul class="unit-topics"><li>3.1 Data mining; KDD; types of databases; functionalities; classification of systems; task primitives; data objects</li><li>3.2 Preprocessing: cleaning, integration, transformation, reduction, discretization and concept hierarchy</li></ul></li><li><strong class="unit-title">Unit- 4.0: Association Rule Mining (7 hrs)</strong><ul class="unit-topics"><li>4.1 Association rules; frequent itemset generation; Apriori principle; support and confidence</li><li>4.2 Apriori and FP-Growth algorithms; maximal and closed frequent itemsets</li></ul></li><li><strong class="unit-title">Unit- 5.0: Classification and Prediction (7 hrs)</strong><ul class="unit-topics"><li>5.1 Issues; decision tree, Bayesian classification; backpropagation</li><li>5.2 Classification using association rules; prediction methods; classifier accuracy evaluation</li></ul></li><li><strong class="unit-title">Unit- 6.0: Clustering and Mining Complex Data (7 hrs)</strong><ul class="unit-topics"><li>6.1 Types of data; clustering methods (K-Means, hierarchical, density-based, grid-based, model-based); outlier analysis</li><li>6.2 Spatial, multimedia, time-series and text databases; web mining</li></ul></li></ul>
 </section>
 
+<section id="subject-100801P" class="info-card lab-card subject-card tab-content">
+<h2 class="lab-heading">Project-II [100801P]</h2>
+<p>Detailed syllabus / project instructions are not provided in the supplied 8th semester HTML.</p>
+</section>
 </div>
 </main>
 </div>
-<script>
-const buttons=[...document.querySelectorAll('.tab-btn')];
-const cards=[...document.querySelectorAll('.subject-card')];
-function show(target,btn){
- cards.forEach(c=>c.classList.toggle('active',c.id===target));
- buttons.forEach(b=>b.classList.remove('active'));
- if(btn) btn.classList.add('active');
-}
-buttons.forEach(btn=>btn.addEventListener('click',()=>show(btn.dataset.target,btn)));
-if(buttons.length) show(buttons[0].dataset.target,buttons[0]);
-const toggle=document.getElementById('credits-toggle');
-const table=document.getElementById('credits-table-container');
-toggle.addEventListener('click',()=>{
- const hidden=table.style.display==='none';
- table.style.display=hidden?'block':'none';
- document.getElementById('chev').textContent=hidden?'⌄':'›';
-});
-document.getElementById('menu-toggle').addEventListener('click',()=>alert('Menu is controlled by the main BEU Connect app.'));
-</script>
+<div id="elective-modal" class="modal-overlay">
+<div class="modal-content">
+<button id="modal-close" class="modal-close-btn">&times;</button>
+<h2 id="modal-title">Select an Elective</h2>
+<div id="modal-options"></div>
+</div>
+</div>
+<script src="cordova.js"></script>
+<script src="js/admob.js"></script>
+<script src="js/appopen.js"></script>
+<script src="syllabus.js"></script>
 </body>
 </html>
