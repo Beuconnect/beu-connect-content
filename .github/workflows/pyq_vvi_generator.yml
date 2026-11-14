@@ -1,0 +1,55 @@
+name: Automatic PYQ VVI Topics Generator
+
+on:
+  push:
+    paths:
+      - 'app/src/main/assets/BEUConnect_PYQ_structured.json'
+      - 'BEUConnect_PYQ_structured.json'
+      - 'scripts/**'
+      - '.github/workflows/pyq_vvi_generator.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-vvi-topics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4
+
+      - name: Run unit tests
+        run: |
+          python scripts/test_generate_vvi_topics.py
+
+      - name: Generate updated VVI Topics JSON
+        run: |
+          python scripts/generate_vvi_topics.py
+
+      - name: Commit and push updated VVI Topics JSON
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet app/src/main/assets/BEUConnect_Important_Topics.json; then
+            echo "No changes detected in Important Topics JSON. Skipping commit."
+          else
+            echo "Changes detected in Important Topics JSON. Committing and pushing..."
+            git add app/src/main/assets/BEUConnect_Important_Topics.json
+            git commit -m "[auto] Regenerate VVI Topics from updated PYQs [skip ci]"
+            git push
+          fi
