@@ -38,11 +38,18 @@
       "link": "https://beu-bih.ac.in/result-one",
       "active": false
      },
+     {
+      "id": 9,
+      "message": " 📢 2nd SEMESTER RESULT OUT",
+      "link": "https://beu-bih.ac.in/result-two/B.Tech%202nd%20Semester%20Examination%202026?d=eyJzZW1lc3RlciI6Miwic2Vzc2lvbiI6IjIwMjYiLCJleGFtX2hlbGQiOiJKdWx5LzIwMjYiLCJleGFtX2lkIjoiMjYwMTAyIn0%3D",
+      "active": true
+     },
+      
     {
       "id": 8,
       "message": "📢 Best Wishes to All 4th Semester Students! 🎓 Prepare with VVI Topics & PYQs on the BEU Connect App. Study Smart, Score Better! 🌟",
       "link": "",
-      "active": true
+      "active": false
      }
      
    
